@@ -22,27 +22,14 @@
         <div class="header-top header-top-ptb-1 d-none d-lg-block">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-xl-3 col-lg-4">
-                        <div class="header-info">
-                        <ul>
-                            <li>
-                                <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
-                                <ul class="language-dropdown">
-                                    <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a></li>
-                                    <li><a href="#"><img src="assets/imgs/theme/flag-dt.png" alt="">Deutsch</a></li>
-                                    <li><a href="#"><img src="assets/imgs/theme/flag-ru.png" alt="">Pусский</a></li>
-                                </ul>
-                            </li>                                
-                        </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-4">
+                    <div class="col-xl-4 col-lg-4"></div>
+                    <div class="col-xl-5 col-lg-4">
                         <div class="text-center">
                             <div id="news-flash" class="d-inline-block">
                                 <ul>
-                                    <li>Get great devices up to 50% off <a href="shop.html">View details</a></li>
+                                    <li>Get great devices up to 50% off<a href="shop.html">  View details</a></li>
                                     <li>Supper Value Deals - Save more with coupons</li>
-                                    <li>Trendy 25silver jewelry, save up 35% off today <a href="shop.html">Shop now</a></li>
+                                    <li>Trendy 25 silver jewelry, save up 35% off today<a href="shop.html">  Shop now</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -51,16 +38,16 @@
                         <div class="header-info header-info-right">
                             @auth
                             <ul>                                
-                                <li><i class="fi-rs-user"></i> {{ Auth::user()->name }}  /
+                                <li><i class="fi-rs-user"></i> {{ Auth::user()->name }}
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"><strong>Logout</strong></a>
                                     </form>
                                 </li>
                             </ul>
                             @else
                             <ul>                                
-                                <li><a href="{{ route('login') }}">Log In </a>  / <a href="{{ route('register') }}">Sign Up</a></li>
+                                <li><a href="{{ route('login') }}">Log In </a>   |   <a href="{{ route('register') }}">Sign Up</a></li>
                             </ul>
                             @endif
                         </div>
@@ -328,9 +315,9 @@
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                             <nav>
                                 <ul>
-                                    <li><a class="active" href="index.html">Home </a></li>
+                                    <li><a class="active" href="/">Home </a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="{{ route('shop') }}">Shop</a></li>
                                     <li class="position-static"><a href="#">Collections <i class="fi-rs-angle-down"></i></a>
                                         <ul class="mega-menu">
                                             <li class="sub-mega-menu sub-mega-menu-width-22">
@@ -411,9 +398,6 @@
                                 </ul>
                             </nav>
                         </div>
-                    </div>
-                    <div class="hotline d-none d-lg-block">
-                        <p><i class="fi-rs-smartphone"></i><span>Toll Free</span> (+1) 0000-000-000 </p>
                     </div>
                     <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%</p>
                     <div class="header-action-right d-block d-lg-none">
@@ -627,7 +611,7 @@
                             </div>
                             <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
                             <p class="wow fadeIn animated">
-                                <strong>Address: </strong>562 Wellington Road
+                                <strong>Address: </strong>Pasuruan
                             </p>
                             <p class="wow fadeIn animated">
                                 <strong>Email: </strong>contact@furriend.io
@@ -671,23 +655,6 @@
                 </div>
             </div>
         </section>
-        <div class="container pb-20 wow fadeIn animated mob-center">
-            <div class="row">
-                <div class="col-12 mb-20">
-                    <div class="footer-bottom"></div>
-                </div>
-                <div class="col-lg-6">
-                    <p class="float-md-left font-sm text-muted mb-0">
-                        <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-conditions.html">Terms & Conditions</a>
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <p class="text-lg-end text-start font-sm text-muted mb-0">
-                        &copy; <strong class="text-brand">Furriend</strong>
-                    </p>
-                </div>
-            </div>
-        </div>
     </footer>    
     <!-- Vendor JS-->
 <script src="{{ asset('assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
