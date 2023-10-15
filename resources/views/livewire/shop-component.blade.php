@@ -63,7 +63,7 @@
                                 <div class="product-cart-wrap mb-30">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
+                                            <a href="{{ route('product.details', ['slug'=>$product->slug]) }}">
                                                 <img class="default-img" src="{{ asset('assets/imgs/shop/product-')}}{{ $product->id }}-1.jpg" alt="{{ $product->name }}">
                                                 <img class="hover-img" src="{{ asset('assets/imgs/shop/product-')}}{{ $product->id }}-2.jpg" alt="{{ $product->name }}">
                                             </a>
@@ -82,7 +82,7 @@
                                         <div class="product-category">
                                             <a href="shop.html">Music</a>
                                         </div>
-                                        <h2><a href="product-details.html">{{ $product->name }}</a></h2>
+                                        <h2><a href="{{ route('product.details', ['slug'=>$product->slug]) }}">{{ $product->name }}</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
                                                 <span>90%</span>
