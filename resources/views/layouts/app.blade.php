@@ -28,7 +28,7 @@
                             <div id="news-flash" class="d-inline-block">
                                 <ul>
                                     <li>Get great devices up to 50% off<a href="shop.html">  View details</a></li>
-                                    <li>Supper Value Deals - Save more with coupons</li>
+                                    <li>Super Value Deals - Save more with coupons</li>
                                     <li>Trendy 25 silver jewelry, save up 35% off today<a href="shop.html">  Shop now</a></li>
                                 </ul>
                             </div>
