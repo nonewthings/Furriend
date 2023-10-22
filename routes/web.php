@@ -17,6 +17,7 @@ Route::middleware(['auth'])->group(function(){
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', App\Http\Livewire\Admin\AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/categories', App\Http\Livewire\Admin\AdminCategoriesComponent::class)->name('admin.categories');
 });
 
 require __DIR__.'/auth.php';
