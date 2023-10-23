@@ -50,7 +50,7 @@
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{ $category->name }}</td>
                                                 <td><a href="{{ route('product.category', ['slug' => $category->slug]) }}">{{ $category->slug }}</a></td>
-                                                <td></td>
+                                                <td><a href="{{ route('admin.category.edit', ['category_id' => $category->id]) }}" class="text-info">Edit</a></td>
                                             </tr>
                                         @endforeach
                                     </tbody>
