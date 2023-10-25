@@ -20,6 +20,7 @@ Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/categories', App\Http\Livewire\Admin\AdminCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/category/add', App\Http\Livewire\Admin\AdminAddCategoryComponent::class)->name('admin.category.add');
     Route::get('/admin/category/edit/{category_id}', App\Http\Livewire\Admin\AdminEditCategoryComponent::class)->name('admin.category.edit');
+    Route::get('/admin/products', App\Http\Livewire\Admin\AdminProductComponent::class)->name('admin.products');
 });
 
 require __DIR__.'/auth.php';
