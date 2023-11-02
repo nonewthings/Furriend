@@ -104,7 +104,6 @@
                     </ul>
                     <a href="#" class="view-more d-none d-md-flex">View More<i class="fi-rs-angle-double-small-right"></i></a>
                 </div>
-                <!--End nav-tabs-->
                 <div class="tab-content wow fadeIn animated" id="myTabContent">
                     <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div class="row product-grid-4">
@@ -409,9 +408,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-grid-4-->
                     </div>
-                    <!--En tab one (Featured)-->
                     <div class="tab-pane fade" id="tab-two" role="tabpanel" aria-labelledby="tab-two">
                         <div class="row product-grid-4">
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
@@ -715,9 +712,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-grid-4-->
                     </div>
-                    <!--En tab two (Popular)-->
                     <div class="tab-pane fade" id="tab-three" role="tabpanel" aria-labelledby="tab-three">
                         <div class="row product-grid-4">
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
@@ -1021,11 +1016,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-grid-4-->
                     </div>
-                    <!--En tab three (New added)-->
                 </div>
-                <!--End tab-content-->
             </div>
         </section>
         <section class="banner-2 section-padding pb-0">
@@ -1170,7 +1162,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-cart-wrap-2-->
                         <div class="product-cart-wrap small hover-up">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
@@ -1201,7 +1192,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-cart-wrap-2-->
                         <div class="product-cart-wrap small hover-up">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
@@ -1232,7 +1222,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-cart-wrap-2-->
                         <div class="product-cart-wrap small hover-up">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
@@ -1263,7 +1252,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-cart-wrap-2-->
                         <div class="product-cart-wrap small hover-up">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
@@ -1294,7 +1282,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-cart-wrap-2-->
                         <div class="product-cart-wrap small hover-up">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
@@ -1325,7 +1312,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-cart-wrap-2-->
                         <div class="product-cart-wrap small hover-up">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
@@ -1353,12 +1339,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!--End product-cart-wrap-2-->
                     </div>
                 </div>
             </div>
         </section>
-       
         <section class="section-padding">
             <div class="container">
                 <h3 class="section-title mb-20 wow fadeIn animated"><span>Featured</span> Brands</h3>

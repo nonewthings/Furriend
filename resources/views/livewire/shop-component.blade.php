@@ -107,7 +107,6 @@
                                         </div>
                                         <div class="product-price">
                                             <span>${{ $product->regular_price }} </span>
-                                            <!-- <span class="old-price">$245.8</span> -->
                                         </div>
                                         <div class="product-action-1 show">
                                             @if($witems->contains($product->id))
@@ -122,19 +121,9 @@
                             </div>
                             @endforeach
                         </div>
-                        <!--pagination-->
+                        <!--Pagination-->
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
                             {{ $products->links() }}
-                            <!-- <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                    <li class="page-item"><a class="page-link dot" href="#">...</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">16</a></li>
-                                    <li class="page-item"><a class="page-link" href="#"><i class="fi-rs-angle-double-small-right"></i></a></li>
-                                </ul>
-                            </nav> -->
                         </div>
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
@@ -150,7 +139,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <!-- Filter By Price -->
+                        <!-- Filter by Price -->
                         <div class="sidebar-widget price_range range mb-30">
                             <div class="widget-header position-relative mb-20 pb-10">
                                 <h5 class="widget-title mb-10">Filter by price</h5>
@@ -194,7 +183,7 @@
                             </div>
                             <a href="shop.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Filter</a>
                         </div>
-                        <!-- Product sidebar Widget -->
+                        <!-- Product Sidebar Widget -->
                         <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
                             <div class="widget-header position-relative mb-20 pb-10">
                                 <h5 class="widget-title mb-10">New products</h5>
