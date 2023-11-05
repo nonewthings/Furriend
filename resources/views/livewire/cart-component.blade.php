@@ -34,11 +34,9 @@
                                 <tbody>
                                     @foreach(Cart::instance('cart')->content() as $item)
                                     <tr>
-                                        <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/products')}}/{{ $product->image }}" alt="#"></td>
+                                        <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/products')}}/{{ $item->model->image }}" alt="#"></td>
                                         <td class="product-des product-name">
                                             <h5 class="product-name"><a href="product-details.html">{{ $item->model->name }}</a></h5>
-                                            <!-- <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.
-                                            </p> -->
                                         </td>
                                         <td class="price" data-title="Price"><span>${{ $item->model->regular_price }} </span></td>
                                         <td class="text-center" data-title="Stock">
