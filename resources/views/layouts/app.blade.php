@@ -77,275 +77,92 @@
                     <div class="logo logo-width-1 d-block d-lg-none">
                         <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}" alt="Logo"></a>
                     </div>
-                    <div class="header-nav d-none d-lg-flex">
-                        <div class="main-categori-wrap d-none d-lg-block">
-                            <a class="categori-button-active" href="#">
-                                <span class="fi-rs-apps"></span> Categories
-                            </a>
-                            <div class="categori-dropdown-wrap categori-dropdown-active-large">
-                                <ul>
-                                    <li class="has-children">
-                                        <a href="shop.html"><i class="furriend-font-dress"></i>Women's Clothing</a>
-                                        <div class="dropdown-menu">
-                                            <ul class="mega-menu d-lg-flex">
-                                                <li class="mega-menu-col col-lg-7">
-                                                    <ul class="d-lg-flex">
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li><span class="submenu-title">Hot & Trending</span></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Dresses</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Blouses & Shirts</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Hoodies & Sweatshirts</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Women's Sets</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Suits & Blazers</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Bodysuits</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Tanks & Camis</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Coats & Jackets</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li><span class="submenu-title">Bottoms</span></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Leggings</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Skirts</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Shorts</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Jeans</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Pants & Capris</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Bikini Sets</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Cover-Ups</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Swimwear</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-5">
-                                                    <div class="header-banner2">
-                                                        <img src="{{ asset('assets/imgs/banner/menu-banner-2.jpg') }}" alt="menu_banner1">
-                                                        <div class="banne_info">
-                                                            <h6>10% Off</h6>
-                                                            <h4>New Arrival</h4>
-                                                            <a href="#">Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="header-banner2">
-                                                        <img src="{{ asset('assets/imgs/banner/menu-banner-3.jpg') }}" alt="menu_banner2">
-                                                        <div class="banne_info">
-                                                            <h6>15% Off</h6>
-                                                            <h4>Hot Deals</h4>
-                                                            <a href="#">Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                    <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block mx-auto">
+                        <nav>
+                            <ul>
+                                <li><a class="{{ request()->routeIs('home.index') ? 'active' : '' }}" href="{{ route('home.index') }}">Home</a></li>
+                                <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
+                                <li><a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a></li>
+                                <li class="position-static"><a href="#">Categories <i class="fi-rs-angle-down"></i></a>
+                                    <ul class="mega-menu">
+                                        <li class="sub-mega-menu sub-mega-menu-width-22">
+                                            <a class="menu-title" href="#">Women's Fashion</a>
+                                            <ul>
+                                                <li><a href="product-details.html">Dresses</a></li>
+                                                <li><a href="product-details.html">Blouses & Shirts</a></li>
+                                                <li><a href="product-details.html">Hoodies & Sweatshirts</a></li>
+                                                <li><a href="product-details.html">Wedding Dresses</a></li>
+                                                <li><a href="product-details.html">Prom Dresses</a></li>
+                                                <li><a href="product-details.html">Cosplay Costumes</a></li>
                                             </ul>
-                                        </div>
-                                    </li>
-                                    <li class="has-children">
-                                        <a href="shop.html"><i class="furriend-font-tshirt"></i>Men's Clothing</a>
-                                        <div class="dropdown-menu">
-                                            <ul class="mega-menu d-lg-flex">
-                                                <li class="mega-menu-col col-lg-7">
-                                                    <ul class="d-lg-flex">
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li><span class="submenu-title">Jackets & Coats</span></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Down Jackets</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Jackets</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Parkas</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Faux Leather Coats</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Trench</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Wool & Blends</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Vests & Waistcoats</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Leather Coats</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li><span class="submenu-title">Suits & Blazers</span></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Blazers</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Suit Jackets</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Suit Pants</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Suits</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Vests</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Tailor-made Suits</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Cover-Ups</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-5">
-                                                    <div class="header-banner2">
-                                                        <img src="{{ asset('assets/imgs/banner/menu-banner-4.jpg') }}" alt="menu_banner1">
-                                                        <div class="banne_info">
-                                                            <h6>10% Off</h6>
-                                                            <h4>New Arrival</h4>
-                                                            <a href="#">Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                        </li>
+                                        <li class="sub-mega-menu sub-mega-menu-width-22">
+                                            <a class="menu-title" href="#">Men's Fashion</a>
+                                            <ul>
+                                                <li><a href="product-details.html">Jackets</a></li>
+                                                <li><a href="product-details.html">Casual Faux Leather</a></li>
+                                                <li><a href="product-details.html">Genuine Leather</a></li>
+                                                <li><a href="product-details.html">Casual Pants</a></li>
+                                                <li><a href="product-details.html">Sweatpants</a></li>
+                                                <li><a href="product-details.html">Harem Pants</a></li>
                                             </ul>
-                                        </div>
-                                    </li>
-                                    <li class="has-children">
-                                        <a href="shop.html"><i class="furriend-font-smartphone"></i> Cellphones</a>
-                                        <div class="dropdown-menu">
-                                            <ul class="mega-menu d-lg-flex">
-                                                <li class="mega-menu-col col-lg-7">
-                                                    <ul class="d-lg-flex">
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li><span class="submenu-title">Hot & Trending</span></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Cellphones</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">iPhones</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Refurbished Phones</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Mobile Phone</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Mobile Phone Parts</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Phone Bags & Cases</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Communication Equipments</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Walkie Talkie</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li><span class="submenu-title">Accessories</span></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Screen Protectors</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Wire Chargers</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Wireless Chargers</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Car Chargers</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Power Bank</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Armbands</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Dust Plug</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Signal Boosters</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-5">
-                                                    <div class="header-banner2">
-                                                        <img src="{{ asset('assets/imgs/banner/menu-banner-5.jpg') }}" alt="menu_banner1">
-                                                        <div class="banne_info">
-                                                            <h6>10% Off</h6>
-                                                            <h4>New Arrival</h4>
-                                                            <a href="#">Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="header-banner2">
-                                                        <img src="{{ asset('assets/imgs/banner/menu-banner-6.jpg') }}" alt="menu_banner2">
-                                                        <div class="banne_info">
-                                                            <h6>15% Off</h6>
-                                                            <h4>Hot Deals</h4>
-                                                            <a href="#">Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                        </li>
+                                        <li class="sub-mega-menu sub-mega-menu-width-22">
+                                            <a class="menu-title" href="#">Technology</a>
+                                            <ul>
+                                                <li><a href="product-details.html">Gaming Laptops</a></li>
+                                                <li><a href="product-details.html">Ultraslim Laptops</a></li>
+                                                <li><a href="product-details.html">Tablets</a></li>
+                                                <li><a href="product-details.html">Laptop Accessories</a></li>
+                                                <li><a href="product-details.html">Tablet Accessories</a></li>
                                             </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="shop.html"><i class="furriend-font-desktop"></i>Computer & Office</a></li>
-                                    <li><a href="shop.html"><i class="furriend-font-cpu"></i>Consumer Electronics</a></li>
-                                    <li><a href="shop.html"><i class="furriend-font-diamond"></i>Jewelry & Accessories</a></li>
-                                    <li><a href="shop.html"><i class="furriend-font-home"></i>Home & Garden</a></li>
-                                    <li><a href="shop.html"><i class="furriend-font-high-heels"></i>Shoes</a></li>
-                                    <li><a href="shop.html"><i class="furriend-font-teddy-bear"></i>Mother & Kids</a></li>
-                                    <li><a href="shop.html"><i class="furriend-font-kite"></i>Outdoor fun</a></li>
-                                    <li>
-                                        <ul class="more_slide_open" style="display: none;">
-                                            <li><a href="shop.html"><i class="furriend-font-desktop"></i>Beauty, Health</a></li>
-                                            <li><a href="shop.html"><i class="furriend-font-cpu"></i>Bags and Shoes</a></li>
-                                            <li><a href="shop.html"><i class="furriend-font-diamond"></i>Consumer Electronics</a></li>
-                                            <li><a href="shop.html"><i class="furriend-font-home"></i>Automobiles & Motorcycles</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <div class="more_categories">Show more...</div>
-                            </div>
-                        </div>
-                        <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
-                            <nav>
-                                <ul>
-                                    <li><a class="active" href="/">Home </a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="{{ route('shop') }}">Shop</a></li>
-                                    <li class="position-static"><a href="#">Collections <i class="fi-rs-angle-down"></i></a>
-                                        <ul class="mega-menu">
-                                            <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                <a class="menu-title" href="#">Women's Fashion</a>
-                                                <ul>
-                                                    <li><a href="product-details.html">Dresses</a></li>
-                                                    <li><a href="product-details.html">Blouses & Shirts</a></li>
-                                                    <li><a href="product-details.html">Hoodies & Sweatshirts</a></li>
-                                                    <li><a href="product-details.html">Wedding Dresses</a></li>
-                                                    <li><a href="product-details.html">Prom Dresses</a></li>
-                                                    <li><a href="product-details.html">Cosplay Costumes</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                <a class="menu-title" href="#">Men's Fashion</a>
-                                                <ul>
-                                                    <li><a href="product-details.html">Jackets</a></li>
-                                                    <li><a href="product-details.html">Casual Faux Leather</a></li>
-                                                    <li><a href="product-details.html">Genuine Leather</a></li>
-                                                    <li><a href="product-details.html">Casual Pants</a></li>
-                                                    <li><a href="product-details.html">Sweatpants</a></li>
-                                                    <li><a href="product-details.html">Harem Pants</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                <a class="menu-title" href="#">Technology</a>
-                                                <ul>
-                                                    <li><a href="product-details.html">Gaming Laptops</a></li>
-                                                    <li><a href="product-details.html">Ultraslim Laptops</a></li>
-                                                    <li><a href="product-details.html">Tablets</a></li>
-                                                    <li><a href="product-details.html">Laptop Accessories</a></li>
-                                                    <li><a href="product-details.html">Tablet Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="sub-mega-menu sub-mega-menu-width-34">
-                                                <div class="menu-banner-wrap">
-                                                    <a href="product-details.html"><img src="{{ asset('assets/imgs/banner/menu-banner.jpg') }}" alt="Furriend"></a>
-                                                    <div class="menu-banner-content">
-                                                        <h4>Hot deals</h4>
-                                                        <h3>Don't miss<br> Trending</h3>
-                                                        <div class="menu-banner-price">
-                                                            <span class="new-price text-success">Save to 50%</span>
-                                                        </div>
-                                                        <div class="menu-banner-btn">
-                                                            <a href="product-details.html">Shop now</a>
-                                                        </div>
+                                        </li>
+                                        <li class="sub-mega-menu sub-mega-menu-width-34">
+                                            <div class="menu-banner-wrap">
+                                                <a href="product-details.html"><img src="{{ asset('assets/imgs/banner/menu-banner.jpg') }}" alt="Furriend"></a>
+                                                <div class="menu-banner-content">
+                                                    <h4>Hot deals</h4>
+                                                    <h3>Don't miss<br> Trending</h3>
+                                                    <div class="menu-banner-price">
+                                                        <span class="new-price text-success">Save to 50%</span>
                                                     </div>
-                                                    <div class="menu-banner-discount">
-                                                        <h3>
-                                                            <span>35%</span>
-                                                            off
-                                                        </h3>
+                                                    <div class="menu-banner-btn">
+                                                        <a href="product-details.html">Shop now</a>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog </a></li>                                    
-                                    <li><a href="contact.html">Contact</a></li>
-                                    @auth
-                                        <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
-                                            @if(Auth::user()->utype == 'ADM')
-                                                <ul class="sub-menu">
-                                                    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                                    <li><a href="{{ route('admin.products') }}">Products</a></li>
-                                                    <li><a href="{{ route('admin.categories') }}">Categories</a></li>
-                                                    <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li>
-                                                    <li><a href="#">Coupons</a></li>
-                                                    <li><a href="#">Orders</a></li>
-                                                    <li><a href="#">Customers</a></li>
-                                                </ul>
-                                            @else
-                                                <ul class="sub-menu">
-                                                    <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
-                                                </ul>
-                                            @endif
+                                                <div class="menu-banner-discount">
+                                                    <h3>
+                                                        <span>35%</span>
+                                                        off
+                                                    </h3>
+                                                </div>
+                                            </div>
                                         </li>
-                                    @endif
-                                </ul>
-                            </nav>
-                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="blog.html">Blog </a></li>                                    
+                                <li><a href="contact.html">Contact</a></li>
+                                @auth
+                                    <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
+                                        @if(Auth::user()->utype == 'ADM')
+                                            <ul class="sub-menu">
+                                                <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                                <li><a href="{{ route('admin.products') }}">Products</a></li>
+                                                <li><a href="{{ route('admin.categories') }}">Categories</a></li>
+                                                <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li>
+                                                <li><a href="#">Coupons</a></li>
+                                                <li><a href="#">Orders</a></li>
+                                                <li><a href="#">Customers</a></li>
+                                            </ul>
+                                        @else
+                                            <ul class="sub-menu">
+                                                <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endif
+                            </ul>
+                        </nav>
                     </div>
                     <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%</p>
                     <div class="header-action-right d-block d-lg-none">
@@ -433,30 +250,12 @@
                     </form>
                 </div>
                 <div class="mobile-menu-wrap mobile-header-border">
-                    <div class="main-categori-wrap mobile-header-border">
-                        <a class="categori-button-active-2" href="#">
-                            <span class="fi-rs-apps"></span> Browse Categories
-                        </a>
-                        <div class="categori-dropdown-wrap categori-dropdown-active-small">
-                            <ul>
-                                <li><a href="shop.html"><i class="furriend-font-dress"></i>Women's Clothing</a></li>
-                                <li><a href="shop.html"><i class="furriend-font-tshirt"></i>Men's Clothing</a></li>
-                                <li> <a href="shop.html"><i class="furriend-font-smartphone"></i> Cellphones</a></li>
-                                <li><a href="shop.html"><i class="furriend-font-desktop"></i>Computer & Office</a></li>
-                                <li><a href="shop.html"><i class="furriend-font-cpu"></i>Consumer Electronics</a></li>
-                                <li><a href="shop.html"><i class="furriend-font-home"></i>Home & Garden</a></li>
-                                <li><a href="shop.html"><i class="furriend-font-high-heels"></i>Shoes</a></li>
-                                <li><a href="shop.html"><i class="furriend-font-teddy-bear"></i>Mother & Kids</a></li>
-                                <li><a href="shop.html"><i class="furriend-font-kite"></i>Outdoor fun</a></li>
-                            </ul>
-                        </div>
-                    </div>
                     <!-- mobile menu start -->
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="index.html">Home</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop.html">shop</a></li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Our Collections</a>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Categories</a>
                                 <ul class="dropdown">
                                     <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Women's Fashion</a>
                                         <ul class="dropdown">
@@ -485,30 +284,16 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="blog.html">Blog</a></li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Language</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">German</a></li>
-                                    <li><a href="#">Spanish</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap mobile-header-border">
-                    <div class="single-mobile-header-info mt-30">
-                        <a href="contact.html"> Our location </a>
-                    </div>
                     <div class="single-mobile-header-info">
                         <a href="login.html">Log In </a>                        
                     </div>
                     <div class="single-mobile-header-info">                        
                         <a href="register.html">Sign Up</a>
-                    </div>
-                    <div class="single-mobile-header-info">
-                        <a href="#">(+1) 0000-000-000 </a>
                     </div>
                 </div>
                 <div class="mobile-social-icon">
@@ -522,30 +307,8 @@
     </div>
     {{$slot}}
     <footer class="main">
-        <section class="newsletter p-30 text-white wow fadeIn animated">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 mb-md-3 mb-lg-0">
-                        <div class="row align-items-center">
-                            <div class="col flex-horizontal-center">
-                                <img class="icon-email" src="{{ asset('assets/imgs/theme/icons/icon-email.svg') }}">
-                                <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
-                            </div>
-                            <div class="col my-4 my-md-0 des">
-                                <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first shopping.</strong></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <form class="form-subcriber d-flex wow fadeIn animated">
-                            <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
-                            <button class="btn bg-dark text-white" type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section-padding footer-mid">
+        <!-- <section class="newsletter p-1 text-white wow fadeIn animated"></section> -->
+        <section class="section-padding footer-mid newsletter">
             <div class="container pt-15 pb-20">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">

@@ -11,9 +11,9 @@ use Cart;
 class ShopComponent extends Component
 {
     use WithPagination;
+    public $isActive = false;
     public $pageSize = 12;
     public $orderBy = "Default Sorting";
-
     public $min_value = 0;
     public $max_value = 1000;
 
