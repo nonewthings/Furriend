@@ -11,16 +11,14 @@
         <section class="section-padding">
             <div class="container pt-25">
                 <div class="row">
-                    <div class="col-lg-6 align-self-center mb-lg-0 mb-4">
-                        <h6 class="mt-0 mb-15 text-uppercase font-sm text-brand wow fadeIn animated">Our Company</h6>
-                        <h1 class="font-heading mb-40">
-                            We are Building The Destination For Getting Things Done
-                        </h1>
-                        <p>Tempus ultricies augue luctus et ut suscipit. Morbi arcu, ultrices purus dolor erat bibendum sapien metus.</p>
-                        <p>Tempus ultricies augue luctus et ut suscipit. Morbi arcu, ultrices purus dolor erat bibendum sapien metus. Sit mi, pharetra, morbi arcu id. Pellentesque dapibus nibh augue senectus. </p>
+                    <div class="col-lg-6 align-self-center mb-lg-0 mb-4" style="text-align: justify;">
+                        <h6 class="mt-0 mb-15 text-uppercase font-sm text-brand wow fadeIn animated">About Us</h6>
+                        <h1 class="font-heading mb-40">We Keep Your Pets Happy All the Time</h1><br>
+                        <p>Sebagai usaha pet shop yang modern, kami menyediakan berbagai macam produk dan layanan hewan peliharaan secara lengkap dengan harga yang kompetitif dan didukung menggunakan website dalam menjangkau pelanggan secara luas sehingga mampu memberikan inspirasi pada usaha pet shop lokal dalam melayani mekanisme pelayanan secara konvensional.</p>
                     </div>
-                    <div class="col-lg-6">
-                        <img src="assets/imgs/page/about-1.png" alt="">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-4">
+                        <img src="assets/imgs/page/about.png" width="800px">
                     </div>
                 </div>
             </div>
@@ -30,8 +28,8 @@
                 <div class="row mb-50">
                     <div class="col-lg-12 col-md-12 text-center">
                         <h6 class="mt-0 mb-10 text-uppercase  text-brand font-sm wow fadeIn animated">some facts</h6>
-                        <h2 class="mb-15 text-grey-1 wow fadeIn animated">Take a look what<br> our clients say about us</h2>
-                        <p class="w-50 m-auto text-grey-3 wow fadeIn animated">At vero eos et accusamus et iusto odio dignissimos ducimus quiblanditiis praesentium. ebitis nesciunt voluptatum dicta reprehenderit accusamus</p>
+                        <h2 class="mb-15 text-grey-1 wow fadeIn animated">Take a Look What<br> Our Customers Say About Us</h2>
+                        <p class="w-50 m-auto text-grey-3 wow fadeIn animated">Tingkatkan pengalaman Anda dalam merawat hewan peliharaan bersama Furriend</p>
                     </div>
                 </div>
                 <div class="row align-items-center">
@@ -124,29 +122,35 @@
         </section>
         <section class="section-padding">
             <div class="container pb-25">
-                <h3 class="section-title mb-20 wow fadeIn animated text-center"><span>Featured</span> Clients</h3>
+                <h3 class="section-title mb-20 wow fadeIn animated text-center"><span>Featured</span> Brands</h3>
                 <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
-                    <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
+                    <div class="carausel-6-columns text-center align-items-center" id="carausel-6-columns-3">
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-1.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-1.webp">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-2.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-2.svg">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-3.svg">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-4.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-4.png">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-5.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-5.png">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-6.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-6.png">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-7.webp">
+                        </div>
+                        <div class="brand-logo">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-8.png">
+                        </div>
+                        <div class="brand-logo">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-9.png" style="width: 60%;">
                         </div>
                     </div>
                 </div>

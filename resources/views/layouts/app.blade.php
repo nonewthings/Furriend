@@ -77,11 +77,10 @@
                     <div class="logo logo-width-1 d-block d-lg-none">
                         <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}" alt="Logo"></a>
                     </div>
-                    <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block mx-auto">
+                    <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                         <nav>
                             <ul>
                                 <li><a class="{{ request()->routeIs('home.index') ? 'active' : '' }}" href="{{ route('home.index') }}">Home</a></li>
-                                <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                                 <li><a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a></li>
                                 <li class="position-static"><a href="#">Categories <i class="fi-rs-angle-down"></i></a>
                                     <ul class="mega-menu">
@@ -140,7 +139,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog </a></li>                                    
+                                <li><a href="blog.html">Blog </a></li>     
+                                <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>                               
                                 <li><a href="contact.html">Contact</a></li>
                                 @auth
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
@@ -245,7 +245,7 @@
             <div class="mobile-header-content-area">
                 <div class="mobile-search search-style-3 mobile-header-border">
                     <form action="#">
-                        <input type="text" placeholder="Search for items…">
+                        <input type="text" placeholder="Search products…">
                         <button type="submit"><i class="fi-rs-search"></i></button>
                     </form>
                 </div>
@@ -307,14 +307,13 @@
     </div>
     {{$slot}}
     <footer class="main">
-        <!-- <section class="newsletter p-1 text-white wow fadeIn animated"></section> -->
         <section class="section-padding footer-mid newsletter">
-            <div class="container pt-15 pb-20">
+            <div class="container pt-10 pb-20">
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="widget-about font-md mb-md-5 mb-lg-0">
                             <div class="logo logo-width-1 wow fadeIn animated">
-                                <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}" alt="Logo"></a>
+                                <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}"></a>
                             </div>
                             <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
                             <p class="wow fadeIn animated">
@@ -334,7 +333,7 @@
                     <div class="col-lg-2 col-md-3">
                         <h5 class="widget-title wow fadeIn animated">About</h5>
                         <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="{{ route('about') }}">About Us</a></li>
                             <li><a href="#">Delivery Information</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>
@@ -355,7 +354,7 @@
                         <div class="row">
                             <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
                                 <p class="mb-20 mt-10 wow fadeIn animated">Secured Payment Gateways</p>
-                                <img class="wow fadeIn animated" src="{{ asset('assets/imgs/theme/payment-method.png') }}" alt="Logo">
+                                <img class="wow fadeIn animated" src="{{ asset('assets/imgs/theme/payment-method.png') }}">
                             </div>
                         </div>
                     </div>
