@@ -138,13 +138,13 @@
                             <img class="img-grey-hover" src="assets/imgs/banner/brand-4.png">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-5.png">
-                        </div>
-                        <div class="brand-logo">
                             <img class="img-grey-hover" src="assets/imgs/banner/brand-6.png">
                         </div>
                         <div class="brand-logo">
                             <img class="img-grey-hover" src="assets/imgs/banner/brand-7.webp">
+                        </div>
+                        <div class="brand-logo">
+                            <img class="img-grey-hover" src="assets/imgs/banner/brand-5.png">
                         </div>
                         <div class="brand-logo">
                             <img class="img-grey-hover" src="assets/imgs/banner/brand-8.png">

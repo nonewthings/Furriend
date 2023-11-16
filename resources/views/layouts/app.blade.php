@@ -77,13 +77,13 @@
                     <div class="logo logo-width-1 d-block d-lg-none">
                         <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}" alt="Logo"></a>
                     </div>
-                    <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
+                    <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block mx-auto">
                         <nav>
                             <ul>
                                 <li><a class="{{ request()->routeIs('home.index') ? 'active' : '' }}" href="{{ route('home.index') }}">Home</a></li>
                                 <li><a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a></li>
                                 <li class="position-static"><a href="#">Categories <i class="fi-rs-angle-down"></i></a>
-                                    <ul class="mega-menu">
+                                    <!-- <ul class="mega-menu">
                                         <li class="sub-mega-menu sub-mega-menu-width-22">
                                             <a class="menu-title" href="#">Women's Fashion</a>
                                             <ul>
@@ -137,22 +137,22 @@
                                                 </div>
                                             </div>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </li>
                                 <li><a href="blog.html">Blog </a></li>     
-                                <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>                               
                                 <li><a href="contact.html">Contact</a></li>
+                                <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>                               
                                 @auth
-                                    <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
+                                    <li><a href="#">My Account <i class="fi-rs-angle-down"></i></a>
                                         @if(Auth::user()->utype == 'ADM')
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                                 <li><a href="{{ route('admin.products') }}">Products</a></li>
                                                 <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                 <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li>
-                                                <li><a href="#">Coupons</a></li>
+                                                <!-- <li><a href="#">Coupons</a></li>
                                                 <li><a href="#">Orders</a></li>
-                                                <li><a href="#">Customers</a></li>
+                                                <li><a href="#">Customers</a></li> -->
                                             </ul>
                                         @else
                                             <ul class="sub-menu">
@@ -167,55 +167,8 @@
                     <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%</p>
                     <div class="header-action-right d-block d-lg-none">
                         <div class="header-action-2">
-                            <div class="header-action-icon-2">
-                                <a href="shop-wishlist.php">
-                                    <img alt="Furriend" src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }}">
-                                    <span class="pro-count white">4</span>
-                                </a>
-                            </div>
-                            <div class="header-action-icon-2">
-                                <a class="mini-cart-icon" href="cart.html">
-                                    <img alt="Furriend" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }}">
-                                    <span class="pro-count white">2</span>
-                                </a>
-                                <div class="cart-dropdown-wrap cart-dropdown-hm2">
-                                    <ul>
-                                        <li>
-                                            <div class="shopping-cart-img">
-                                                <a href="product-details.html"><img alt="Furriend" src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}"></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="product-details.html">Plain Striola Shirts</a></h4>
-                                                <h3><span>1 × </span>$800.00</h3>
-                                            </div>
-                                            <div class="shopping-cart-delete">
-                                                <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="shopping-cart-img">
-                                                <a href="product-details.html"><img alt="Furriend" src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}"></a>
-                                            </div>
-                                            <div class="shopping-cart-title">
-                                                <h4><a href="product-details.html">Macbook Pro 2022</a></h4>
-                                                <h3><span>1 × </span>$3500.00</h3>
-                                            </div>
-                                            <div class="shopping-cart-delete">
-                                                <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="shopping-cart-footer">
-                                        <div class="shopping-cart-total">
-                                            <h4>Total <span>$383.00</span></h4>
-                                        </div>
-                                        <div class="shopping-cart-button">
-                                            <a href="cart.html">View cart</a>
-                                            <a href="shop-checkout.php">Checkout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @livewire('wishlist-icon-component')
+                            @livewire('cart-icon-component')
                             <div class="header-action-icon-2 d-block d-lg-none">
                                 <div class="burger-icon burger-icon-white">
                                     <span class="burger-icon-top"></span>
@@ -253,10 +206,10 @@
                     <!-- mobile menu start -->
                     <nav>
                         <ul class="mobile-menu">
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="index.html">Home</a></li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop.html">shop</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('home.index') ? 'active' : '' }}" href="{{ route('home.index') }}">Home</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Categories</a>
-                                <ul class="dropdown">
+                                <!-- <ul class="dropdown">
                                     <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Women's Fashion</a>
                                         <ul class="dropdown">
                                             <li><a href="product-details.html">Dresses</a></li>
@@ -281,20 +234,30 @@
                                             <li><a href="product-details.html">Tablet Accessories</a></li>
                                         </ul>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                         </ul>
                     </nav>
                     <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap mobile-header-border">
-                    <div class="single-mobile-header-info">
-                        <a href="login.html">Log In </a>                        
-                    </div>
-                    <div class="single-mobile-header-info">                        
-                        <a href="register.html">Sign Up</a>
-                    </div>
+                    @auth
+                    <ul>                                
+                        <li><i class="fi-rs-user"></i> {{ Auth::user()->name }}
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"><strong>Logout</strong></a>
+                            </form>
+                        </li>
+                    </ul>
+                    @else
+                    <ul>                                
+                        <li><a href="{{ route('login') }}">Log In </a>   |   <a href="{{ route('register') }}">Sign Up</a></li>
+                    </ul>
+                    @endif
                 </div>
                 <div class="mobile-social-icon">
                     <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}"></a>
