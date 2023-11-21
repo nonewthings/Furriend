@@ -167,7 +167,7 @@
                 </div>
             </div>
         </section>
-        <section class="banner-2 section-padding pb-0">
+        <!-- <section class="banner-2 section-padding pb-0">
             <div class="container">
                 <div class="banner-img banner-big wow fadeIn animated f-none">
                     <img src="assets/imgs/banner/banner-4.png" alt="">
@@ -178,7 +178,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="popular-categories section-padding mt-15 mb-25">
             <div class="container wow fadeIn animated">
                 <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
@@ -188,7 +188,7 @@
                         @foreach($pcategories as $pcategory)
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="{{ route('product.category', ['slug'=>$pcategory->slug]) }}"><img src="{{ asset('assets/imgs/categories') }}/{{$pcategory->image}}" alt="{{ $pcategory->name }}" width="250"></a>
+                                <a href="{{ route('product.category', ['slug'=>$pcategory->slug]) }}"><img src="{{ asset('assets/imgs/categories') }}/{{$pcategory->image}}" alt="{{ $pcategory->name }}" height="170"></a>
                             </figure>
                             <h5><a href="{{ route('product.category', ['slug'=>$pcategory->slug]) }}">{{ $pcategory->name }}</a></h5>
                         </div>

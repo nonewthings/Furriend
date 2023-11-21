@@ -21,17 +21,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-4 col-lg-4"></div>
-                    <div class="col-xl-5 col-lg-4">
-                        <div class="text-center">
-                            <div id="news-flash" class="d-inline-block">
-                                <ul>
-                                    <li>Get great devices up to 50% off<a href="shop.html">  View details</a></li>
-                                    <li>Super Value Deals - Save more with coupons</li>
-                                    <li>Trendy 25 silver jewelry, save up 35% off today<a href="shop.html">  Shop now</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-xl-5 col-lg-4"></div>
                     <div class="col-xl-3 col-lg-4">
                         <div class="header-info header-info-right">
                             @auth

@@ -80,15 +80,9 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="{{ route('product.details', ['slug'=>$product->slug]) }}">
-                                                <img class="default-img" src="{{ asset('assets/imgs/products')}}/{{ $product->image }}" alt="{{ $product->name }}" height="250">
-                                                <img class="hover-img" src="{{ asset('assets/imgs/products')}}/{{ $product->image }}" alt="{{ $product->name }}" height="250">
+                                                <img class="default-img" src="{{ asset('assets/imgs/products')}}/{{ $product->image }}" alt="{{ $product->name }}" height="270">
+                                                <img class="hover-img" src="{{ asset('assets/imgs/products')}}/{{ $product->image }}" alt="{{ $product->name }}" height="270">
                                             </a>
-                                        </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                                                <i class="fi-rs-search"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
                                             <span class="hot">Hot</span>

@@ -70,7 +70,7 @@
                                         </div>
                                         <ul class="product-meta font-xs color-grey mt-50">
                                             <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
-                                            <li class="mb-5">Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">Women</a>, <a href="#" rel="tag">Dress</a> </li>
+                                            <li class="mb-5">Tags: <a href="#" rel="tag">Food</a> </li>
                                             <li>Availability:<span class="in-stock text-success ml-5">8 Items In Stock</span></li>
                                         </ul>
                                     </div>
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-60">
+                            <!-- <div class="row mt-60">
                                 <div class="col-12">
                                     <h3 class="section-title style-1 mb-30">Related products</h3>
                                 </div>
@@ -103,13 +103,8 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="{{ route('product.details', ['slug'=>$rproduct->slug]) }}" tabindex="0">
-                                                            <img class="default-img" src="{{ asset('assets/imgs/shop/product-') }}{{$rproduct->id}}-1.jpg" alt="{{ $rproduct->name }}">
+                                                            <img class="default-img" src="{{ asset('assets/imgs/shop/product-') }}{{$rproduct->id}}-1.webp" alt="{{ $rproduct->name }}">
                                                         </a>
-                                                    </div>
-                                                    <div class="product-action-1">
-                                                        <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-search"></i></a>
-                                                        <a aria-label="Add To Wishlist" class="action-btn small hover-up" href="wishlist.php" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                        <a aria-label="Compare" class="action-btn small hover-up" href="compare.php" tabindex="0"><i class="fi-rs-shuffle"></i></a>
                                                     </div>
                                                     <div class="product-badges product-badges-position product-badges-mrg">
                                                         <span class="hot">Hot</span>
@@ -130,7 +125,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div>                            
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
@@ -139,25 +134,6 @@
                             @foreach($categories as $category)
                                 <li><a href="{{ route('product.category', ['slug'=>$category->slug]) }}">{{ $category->name }}</a></li>
                             @endforeach
-                        </div>
-                        <!-- Filter by Price -->
-                        <div class="sidebar-widget price_range range mb-30">
-                            <div class="widget-header position-relative mb-20 pb-10">
-                                <h5 class="widget-title mb-10">Fill by price</h5>
-                                <div class="bt-1 border-color-1"></div>
-                            </div>
-                            <div class="price-filter">
-                                <div class="price-filter-inner">
-                                    <div id="slider-range"></div>
-                                    <div class="price_slider_amount">
-                                        <div class="label-input">
-                                            <span>Range:</span><input type="text" id="amount" name="price" placeholder="Add Your Price">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="list-group"><div class="list-group-item mb-10 mt-10"><label class="fw-900 mt-15"></label><div class=""></div></div></div>
-                            <a href="shop.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Fillter</a>
                         </div>
                         <!-- Product Sidebar Widget -->
                         <!-- <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">

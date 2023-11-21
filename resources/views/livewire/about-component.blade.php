@@ -40,10 +40,9 @@
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
-                                    J. Bezos
+                                    Sarah
                                 </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
+                                <p class="text-grey-3">"Saya senang berbelanja di pet shop ini! Pilihan produknya lengkap, terjangkau, dan cepat. Barang yang saya pesan juga sampai dengan aman dan dalam kondisi baik. Terima kasih atas pengalaman belanja yang menyenangkan!"</p>
                             </div>
                         </div>
                     </div>
@@ -54,10 +53,9 @@
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
-                                    B.Gates
+                                    Budi
                                 </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
+                                <p class="text-grey-3">"Pertama kali mencoba belanja di sini dan sangat puas dengan layanan mereka. Customer service responsif, membantu saya dengan pertanyaan yang saya miliki. Barang pesanan datang tepat waktu dan sesuai dengan deskripsi."</p>
                             </div>
                         </div>
                     </div>
@@ -68,10 +66,9 @@
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
-                                    B. Meyers
+                                    Rika
                                 </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
+                                <p class="text-grey-3">"Pet shop online ini benar-benar menyelamatkan saya! Saya sibuk dengan pekerjaan dan sulit menemukan waktu untuk pergi ke toko hewan. Dengan adanya ini, saya bisa dengan mudah memesan makanan tanpa harus keluar rumah."</p>
                             </div>
                         </div>
                     </div>
@@ -82,10 +79,9 @@
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
-                                    J. Bezos
+                                    Dimas
                                 </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
+                                <p class="text-grey-3">"Kualitas produk di toko online ini memang tak diragukan lagi. Saya sering membeli makanan kucing premium untuk kucing kesayangan saya, dan mereka selalu menyediakan merek terbaik. Pengiriman juga cepat dan packingnya rapi. Puas dengan pelayanan mereka."</p>
                             </div>
                         </div>
                     </div>
@@ -96,10 +92,9 @@
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
-                                    B.Gates
+                                    Rina
                                 </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
+                                <p class="text-grey-3">"Pet shop ini menjadi pilihan utama saya karena mereka tidak hanya menjual produk, tetapi juga memberikan informasi bermanfaat seputar perawatan hewan peliharaan. Saya sering membaca artikel dan tips yang mereka bagikan di situs mereka. Sangat membantu!"</p>
                             </div>
                         </div>
                     </div>
@@ -110,10 +105,9 @@
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
-                                    B. Meyers
+                                    Adi
                                 </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
+                                <p class="text-grey-3">"Saya mencari-cari mainan interaktif untuk anjing saya, dan pet shop ini memiliki koleksi yang luar biasa. Anjing saya sangat senang dengan mainan yang saya beli, dan saya senang bisa menemukan variasi yang tidak saya temui di toko lain. Juga pengiriman yang cepat."</p>
                             </div>
                         </div>
                     </div>
