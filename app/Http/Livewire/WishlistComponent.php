@@ -2,14 +2,24 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
+use App\Models\Product;
 use Cart;
+use Livewire\Component;
 
 class WishlistComponent extends Component
 {
+    public function store($product_id, $product_name, $product_price)
+    {
+        Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
+        session()->flash('success_message', 'Item added to cart');
+        $this->emitTo('cart-icon-component', 'refreshComponent');
+        $this->removeFromWishlist($product_id);
+        $this->emit('refreshComponent');
+    }
+
     public function removeFromWishlist($product_id)
     {
-        foreach(Cart::instance('wishlist')->content() as $witem);
+        foreach(Cart::instance('wishlist')->content() as $witem)
         {
             if($witem->id==$product_id)
             {
@@ -22,6 +32,12 @@ class WishlistComponent extends Component
 
     public function render()
     {
-        return view('livewire.wishlist-component');
+        $wishlistItems = Cart::instance('wishlist')->content();
+        $wishlistItemsWithImage = $wishlistItems->map(function ($item) {
+            $product = Product::find($item->id);
+            $item->imagePath = asset('assets/imgs/products/' . $product->image);
+            return $item;
+        });
+        return view('livewire.wishlist-component', ['wishlistItems' => $wishlistItemsWithImage]);
     }
 }

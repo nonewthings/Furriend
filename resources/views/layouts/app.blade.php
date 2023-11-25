@@ -140,9 +140,6 @@
                                                 <li><a href="{{ route('admin.products') }}">Products</a></li>
                                                 <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                 <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li>
-                                                <!-- <li><a href="#">Coupons</a></li>
-                                                <li><a href="#">Orders</a></li>
-                                                <li><a href="#">Customers</a></li> -->
                                             </ul>
                                         @else
                                             <ul class="sub-menu">
@@ -287,7 +284,6 @@
                         <h5 class="widget-title wow fadeIn animated">About</h5>
                         <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
                             <li><a href="{{ route('about') }}">About Us</a></li>
-                            <li><a href="#">Delivery Information</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>
                             <li><a href="#">Contact Us</a></li>                            
@@ -296,11 +292,11 @@
                     <div class="col-lg-2  col-md-3">
                         <h5 class="widget-title wow fadeIn animated">My Account</h5>
                         <ul class="footer-list wow fadeIn animated">
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="#">View Cart</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">Track My Order</a></li>                            
-                            <li><a href="#">Order</a></li>
+                            @auth
+                                <li><a href="{{ Auth::user()->utype == 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}">My Account</a></li>
+                                <li><a href="{{ route('shop.cart') }}">View Cart</a></li>
+                                <li><a href="{{ route('shop.wishlist') }}">My Wishlist</a></li>
+                            @endif
                         </ul>
                     </div>
                     <div class="col-lg-4 mob-center">

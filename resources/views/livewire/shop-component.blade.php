@@ -97,7 +97,7 @@
                                             </span>
                                         </div>
                                         <div class="product-price">
-                                            <span>Rp{{ $product->regular_price }} </span>
+                                            <span>Rp{{ number_format($product->regular_price, 0) }} </span>
                                         </div>
                                         <div class="product-action-1 show">
                                             @if($witems->contains($product->id))
@@ -141,13 +141,13 @@
                                     <div id="slider-range" wire:ignore></div>
                                     <div class="price_slider_amount">
                                         <div class="label-input">
-                                            <span>Range:</span> <span class="text-info">Rp{{ $min_value }}</span> - <span class="text-info">${{ $max_value }}</span>
+                                            <span>Range:</span> <span class="text-info">Rp{{ $min_value }}</span> - <span class="text-info">Rp{{ number_format($max_value, 0) }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="list-group"><div class="list-group-item mb-10 mt-10"><label class="fw-900 mt-15"></label><div class=""></div></div></div>
-                            <a href="shop.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Filter</a>
+                            <a class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Filter</a>
                         </div>
                         <!-- Product Sidebar Widget -->
                         <!-- <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
@@ -206,8 +206,8 @@
             sliderrange.slider({
                 range: true,
                 min: 0,
-                max: 1000,
-                values: [0, 1000],
+                max: 100000,
+                values: [0, 100000],
                 slide: function(event, ui) {
                     @this.set('min_value', ui.values[0]);
                     @this.set('max_value', ui.values[1]);

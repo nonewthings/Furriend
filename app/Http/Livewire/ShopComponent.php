@@ -4,9 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Product;
+use Cart;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Cart;
 
 class ShopComponent extends Component
 {
@@ -15,7 +15,7 @@ class ShopComponent extends Component
     public $pageSize = 12;
     public $orderBy = "Default Sorting";
     public $min_value = 0;
-    public $max_value = 1000;
+    public $max_value = 1000000;
 
     public function store($product_id, $product_name, $product_price)
     {

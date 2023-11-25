@@ -13,6 +13,8 @@ class SearchComponent extends Component
     use WithPagination;
     public $pageSize = 12;
     public $orderBy = "Default Sorting";
+    public $min_value = 0;
+    public $max_value = 1000000;
 
     public $q;
     public $search_term;
@@ -39,6 +41,25 @@ class SearchComponent extends Component
     public function changeOrderBy($order)
     {
         $this->orderBy = $order;
+    }
+
+    public function addToWishlist($product_id, $product_name, $product_price)
+    {
+        Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        $this->emitTo('wishlist-icon-component', 'refreshComponent');
+    }
+
+    public function removeFromWishlist($product_id)
+    {
+        foreach(Cart::instance('wishlist')->content() as $witem);
+        {
+            if($witem->id==$product_id)
+            {
+                Cart::instance('wishlist')->remove($witem->rowId);
+                $this->emitTo('wishlist-icon-component', 'refreshComponent');
+                return;
+            }
+        }
     }
     
     public function render()

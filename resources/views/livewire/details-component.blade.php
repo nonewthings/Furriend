@@ -33,10 +33,10 @@
                                     <div class="social-icons single-share">
                                         <ul class="text-grey-5 d-inline-block">
                                             <li><strong class="mr-10">Share this:</strong></li>
-                                            <li class="social-facebook"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}" alt=""></a></li>
-                                            <li class="social-twitter"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}" alt=""></a></li>
-                                            <li class="social-instagram"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}" alt=""></a></li>
-                                            <li class="social-pinterest"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }}" alt=""></a></li>
+                                            <li class="social-facebook"><a><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}" alt=""></a></li>
+                                            <li class="social-twitter"><a><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}" alt=""></a></li>
+                                            <li class="social-instagram"><a><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}" alt=""></a></li>
+                                            <li class="social-pinterest"><a><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }}" alt=""></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                         <div class="product-detail-rating"></div>
                                         <div class="clearfix product-price-cover">
                                             <div class="product-price primary-color float-left">
-                                                <ins><span class="text-brand">Rp{{ $product->regular_price }}</span></ins>
+                                                <ins><span class="text-brand">Rp{{ number_format($product->regular_price, 0) }}</span></ins>
                                             </div>
                                         </div>
                                         <div class="bt-1 border-color-1 mt-15 mb-15"></div>
@@ -58,20 +58,20 @@
                                         <div class="bt-1 border-color-1 mt-30 mb-30"></div>
                                         <div class="detail-extralink">
                                             <div class="detail-qty border radius">
-                                                <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                                <span class="qty-val">1</span>
-                                                <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                                <a href="#" class="qty-down" wire:click.prevent="decreaseQuantity"><i class="fi-rs-angle-small-down"></i></a>
+                                                <span class="qty-val" wire:model="quantity">{{ $quantity }}</span>
+                                                <a href="#" class="qty-up" wire:click.prevent="increaseQuantity"><i class="fi-rs-angle-small-up"></i></a>
                                             </div>
                                             <div class="product-extra-link2">
                                                 <button type="button" class="button button-add-to-cart" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to cart</button>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                         </div>
                                         <ul class="product-meta font-xs color-grey mt-50">
-                                            <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
-                                            <li class="mb-5">Tags: <a href="#" rel="tag">Food</a> </li>
-                                            <li>Availability:<span class="in-stock text-success ml-5">8 Items In Stock</span></li>
+                                            <li class="mb-5">SKU: <a>{{ $product->SKU }}</a></li>
+                                            @if(isset($category))
+                                                <li class="mb-5">Tags: <a href="{{ route('product.category', ['slug'=>$category->slug]) }}">{{ $category->name }}</a></li>
+                                            @endif
+                                            <li>Availability:<span class="in-stock text-success ml-5">{{ $product->quantity }}</span></li>
                                         </ul>
                                     </div>
                                     <!-- Detail Info -->
@@ -135,27 +135,6 @@
                                 <li><a href="{{ route('product.category', ['slug'=>$category->slug]) }}">{{ $category->name }}</a></li>
                             @endforeach
                         </div>
-                        <!-- Product Sidebar Widget -->
-                        <!-- <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
-                            <div class="widget-header position-relative mb-20 pb-10">
-                                <h5 class="widget-title mb-10">New products</h5>
-                                <div class="bt-1 border-color-1"></div>
-                            </div>
-                            @foreach($nproducts as $nproduct)
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-') }}{{$nproduct->id}}.jpg" alt="{{ $nproduct->name }}">
-                                </div>
-                                <div class="content pt-10">
-                                    <h5><a href="{{ route('product.details', ['slug'=>$nproduct->slug]) }}">{{ $nproduct->name }}</a></h5>
-                                    <p class="price mb-0 mt-5">Rp{{ $nproduct->regular_price }}</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:90%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>                         -->
                     </div>
                 </div>
             </div>
