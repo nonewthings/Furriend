@@ -5,14 +5,13 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Product;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Str;
 
 class AdminEditProductComponent extends Component
 {
     use WithFileUploads;
-    
     public $product_id;
     public $name;
     public $slug;

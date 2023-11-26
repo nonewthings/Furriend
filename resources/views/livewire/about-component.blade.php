@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-lg-2"></div>
                     <div class="col-lg-4">
-                        <img src="assets/imgs/page/about.png" width="800px">
+                        <img src="assets/imgs/page/about.png" width="800px" draggable="false">
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
                             <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-1.jpg" alt="">
+                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-1.jpg" draggable="false">
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
@@ -49,7 +49,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
                             <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-3.jpg" alt="">
+                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-5.jpg" draggable="false">
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
@@ -62,7 +62,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
                             <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-2.jpg" alt="">
+                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-2.jpg" draggable="false">
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
@@ -75,7 +75,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
                             <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-4.jpg" alt="">
+                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-6.jpg" draggable="false">
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
@@ -88,7 +88,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
                             <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-5.jpg" alt="">
+                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-4.jpg" draggable="false">
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
@@ -101,11 +101,11 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
                             <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-1.jpg" alt="">
+                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-3.jpg" draggable="false">
                             </div>
                             <div class="pl-30">
                                 <h5 class="mb-5 fw-500">
-                                    Adi
+                                    Nana
                                 </h5>
                                 <p class="text-grey-3">"Saya mencari-cari mainan interaktif untuk anjing saya, dan pet shop ini memiliki koleksi yang luar biasa. Anjing saya sangat senang dengan mainan yang saya beli, dan saya senang bisa menemukan variasi yang tidak saya temui di toko lain. Juga pengiriman yang cepat."</p>
                             </div>

@@ -73,61 +73,48 @@
                                 <li><a class="{{ request()->routeIs('home.index') ? 'active' : '' }}" href="{{ route('home.index') }}">Home</a></li>
                                 <li><a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a></li>
                                 <li class="position-static"><a href="#">Categories <i class="fi-rs-angle-down"></i></a>
-                                    <!-- <ul class="mega-menu">
+                                    <ul class="mega-menu">
                                         <li class="sub-mega-menu sub-mega-menu-width-22">
-                                            <a class="menu-title" href="#">Women's Fashion</a>
+                                            <a class="menu-title">Anjing</a>
                                             <ul>
-                                                <li><a href="product-details.html">Dresses</a></li>
-                                                <li><a href="product-details.html">Blouses & Shirts</a></li>
-                                                <li><a href="product-details.html">Hoodies & Sweatshirts</a></li>
-                                                <li><a href="product-details.html">Wedding Dresses</a></li>
-                                                <li><a href="product-details.html">Prom Dresses</a></li>
-                                                <li><a href="product-details.html">Cosplay Costumes</a></li>
+                                                <li><a href="/product-category/makanan-anjing-basah">Makanan Basah</a></li>
+                                                <li><a href="/product-category/makanan-anjing-kering">Makanan Kering</a></li>
                                             </ul>
                                         </li>
                                         <li class="sub-mega-menu sub-mega-menu-width-22">
-                                            <a class="menu-title" href="#">Men's Fashion</a>
+                                            <a class="menu-title">Kucing</a>
                                             <ul>
-                                                <li><a href="product-details.html">Jackets</a></li>
-                                                <li><a href="product-details.html">Casual Faux Leather</a></li>
-                                                <li><a href="product-details.html">Genuine Leather</a></li>
-                                                <li><a href="product-details.html">Casual Pants</a></li>
-                                                <li><a href="product-details.html">Sweatpants</a></li>
-                                                <li><a href="product-details.html">Harem Pants</a></li>
+                                                <li><a href="/product-category/makanan-kucing-basah">Makanan Basah</a></li>
+                                                <li><a href="/product-category/makanan-kucing-kering">Makanan Kering</a></li>
                                             </ul>
                                         </li>
                                         <li class="sub-mega-menu sub-mega-menu-width-22">
-                                            <a class="menu-title" href="#">Technology</a>
+                                            <a class="menu-title">Mainan</a>
                                             <ul>
-                                                <li><a href="product-details.html">Gaming Laptops</a></li>
-                                                <li><a href="product-details.html">Ultraslim Laptops</a></li>
-                                                <li><a href="product-details.html">Tablets</a></li>
-                                                <li><a href="product-details.html">Laptop Accessories</a></li>
-                                                <li><a href="product-details.html">Tablet Accessories</a></li>
+                                                <li><a href="/product-category/mainan-hewan">Mainan</a></li>
                                             </ul>
                                         </li>
                                         <li class="sub-mega-menu sub-mega-menu-width-34">
                                             <div class="menu-banner-wrap">
-                                                <a href="product-details.html"><img src="{{ asset('assets/imgs/banner/menu-banner.jpg') }}" alt="Furriend"></a>
+                                                <a href="{{ route('shop') }}"><img src="{{ asset('assets/imgs/banner/menu-banner.png') }}"></a>
                                                 <div class="menu-banner-content">
                                                     <h4>Hot deals</h4>
                                                     <h3>Don't miss<br> Trending</h3>
                                                     <div class="menu-banner-price">
-                                                        <span class="new-price text-success">Save to 50%</span>
+                                                        <span class="new-price text-success">Save 25%</span>
                                                     </div>
                                                     <div class="menu-banner-btn">
-                                                        <a href="product-details.html">Shop now</a>
+                                                        <a href="{{ route('shop') }}">Shop now</a>
                                                     </div>
                                                 </div>
                                                 <div class="menu-banner-discount">
                                                     <h3>
-                                                        <span>35%</span>
-                                                        off
+                                                        <span>25%</span>off
                                                     </h3>
                                                 </div>
                                             </div>
                                         </li>
-                                    </ul> -->
+                                    </ul>
                                 </li>
                                 <li><a href="blog.html">Blog </a></li>     
                                 <li><a href="contact.html">Contact</a></li>
@@ -190,45 +177,37 @@
                     </form>
                 </div>
                 <div class="mobile-menu-wrap mobile-header-border">
-                    <!-- mobile menu start -->
+                    <!-- Mobile Menu -->
                     <nav>
                         <ul class="mobile-menu">
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('home.index') ? 'active' : '' }}" href="{{ route('home.index') }}">Home</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('shop') ? 'active' : '' }}" href="{{ route('shop') }}">Shop</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Categories</a>
-                                <!-- <ul class="dropdown">
-                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Women's Fashion</a>
+                                <ul class="dropdown">
+                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Anjing</a>
                                         <ul class="dropdown">
-                                            <li><a href="product-details.html">Dresses</a></li>
-                                            <li><a href="product-details.html">Blouses & Shirts</a></li>
-                                            <li><a href="product-details.html">Hoodies & Sweatshirts</a></li>
-                                            <li><a href="product-details.html">Women's Sets</a></li>
+                                            <li><a href="/product-category/makanan-anjing-basah">Makanan Basah</a></li>
+                                            <li><a href="/product-category/makanan-anjing-kering">Makanan Kering</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Men's Fashion</a>
+                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Kucing</a>
                                         <ul class="dropdown">
-                                            <li><a href="product-details.html">Jackets</a></li>
-                                            <li><a href="product-details.html">Casual Faux Leather</a></li>
-                                            <li><a href="product-details.html">Genuine Leather</a></li>
+                                            <li><a href="/product-category/makanan-kucing-basah">Makanan Basah</a></li>
+                                            <li><a href="/product-category/makanan-kucing-kering">Makanan Kering</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Technology</a>
+                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Mainan</a>
                                         <ul class="dropdown">
-                                            <li><a href="product-details.html">Gaming Laptops</a></li>
-                                            <li><a href="product-details.html">Ultraslim Laptops</a></li>
-                                            <li><a href="product-details.html">Tablets</a></li>
-                                            <li><a href="product-details.html">Laptop Accessories</a></li>
-                                            <li><a href="product-details.html">Tablet Accessories</a></li>
+                                            <li><a href="/product-category/mainan-hewan">Mainan</a></li>
                                         </ul>
                                     </li>
-                                </ul> -->
+                                </ul>
                             </li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                         </ul>
                     </nav>
-                    <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap mobile-header-border">
                     @auth
@@ -289,21 +268,25 @@
                             <li><a href="#">Contact Us</a></li>                            
                         </ul>
                     </div>
-                    <div class="col-lg-2  col-md-3">
+                    <div class="col-lg-2 col-md-3">
                         <h5 class="widget-title wow fadeIn animated">My Account</h5>
                         <ul class="footer-list wow fadeIn animated">
                             @auth
                                 <li><a href="{{ Auth::user()->utype == 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}">My Account</a></li>
                                 <li><a href="{{ route('shop.cart') }}">View Cart</a></li>
                                 <li><a href="{{ route('shop.wishlist') }}">My Wishlist</a></li>
-                            @endif
+                            @else
+                                <li><a href="{{ route('login') }}">My Account</a></li>
+                                <li><a href="{{ route('shop.cart') }}">View Cart</a></li>
+                                <li><a href="{{ route('shop.wishlist') }}">My Wishlist</a></li>
+                            @endauth
                         </ul>
                     </div>
                     <div class="col-lg-4 mob-center">
                         <div class="row">
                             <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
                                 <p class="mb-20 mt-10 wow fadeIn animated">Secured Payment Gateways</p>
-                                <img class="wow fadeIn animated" src="{{ asset('assets/imgs/theme/payment-method.png') }}">
+                                <img class="wow fadeIn animated" src="{{ asset('assets/imgs/theme/payment-method.png') }}" draggable="false">
                             </div>
                         </div>
                     </div>

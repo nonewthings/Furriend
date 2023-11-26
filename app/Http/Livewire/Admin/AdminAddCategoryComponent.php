@@ -4,9 +4,9 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Category;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Str;
 
 class AdminAddCategoryComponent extends Component
 {

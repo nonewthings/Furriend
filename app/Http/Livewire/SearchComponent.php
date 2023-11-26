@@ -4,9 +4,10 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Product;
+use Cart;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Cart;
 
 class SearchComponent extends Component
 {
@@ -15,7 +16,6 @@ class SearchComponent extends Component
     public $orderBy = "Default Sorting";
     public $min_value = 0;
     public $max_value = 1000000;
-
     public $q;
     public $search_term;
 
@@ -23,14 +23,6 @@ class SearchComponent extends Component
     {
         $this->fill(request()->only('q'));
         $this->search_term = '%'.$this->q . '%';
-    }
-
-    public function store($product_id, $product_name, $product_price)
-    {
-        Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
-        session()->flash('success_message', 'Item added in cart');
-        $this->emitTo('cart-icon-component', 'refreshComponent');
-        return redirect()->route('shop.cart');
     }
 
     public function changePageSize($size)
@@ -43,10 +35,26 @@ class SearchComponent extends Component
         $this->orderBy = $order;
     }
 
+    public function store($product_id, $product_name, $product_price)
+    {
+        if (Auth::check()) {
+            Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
+            session()->flash('success_message', 'Item added in cart');
+            $this->emitTo('cart-icon-component', 'refreshComponent');
+            return redirect()->route('shop.cart');
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
     public function addToWishlist($product_id, $product_name, $product_price)
     {
-        Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
-        $this->emitTo('wishlist-icon-component', 'refreshComponent');
+        if (Auth::check()) {
+            Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+            $this->emitTo('wishlist-icon-component', 'refreshComponent');
+        } else {
+            return redirect()->route('login');
+        }
     }
 
     public function removeFromWishlist($product_id)

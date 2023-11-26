@@ -16,7 +16,7 @@
                         <div class="product-detail accordion-detail">
                             <div class="row mb-50">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="detail-gallery">
+                                    <div class="detail-gallery" wire:ignore>
                                         <span class="zoom-icon"><i class="fi-rs-search"></i></span>
                                         <!-- Main Slides -->
                                         <div class="product-image-slider">
@@ -29,14 +29,13 @@
                                             <div><img src="{{ asset('assets/imgs/products')}}/{{ $product->image }}"></div>
                                         </div>
                                     </div>
-                                    <!-- End Gallery -->
                                     <div class="social-icons single-share">
                                         <ul class="text-grey-5 d-inline-block">
                                             <li><strong class="mr-10">Share this:</strong></li>
-                                            <li class="social-facebook"><a><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}" alt=""></a></li>
-                                            <li class="social-twitter"><a><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}" alt=""></a></li>
-                                            <li class="social-instagram"><a><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}" alt=""></a></li>
-                                            <li class="social-pinterest"><a><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }}" alt=""></a></li>
+                                            <li class="social-facebook"><a><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}" draggable="false"></a></li>
+                                            <li class="social-twitter"><a><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}" draggable="false"></a></li>
+                                            <li class="social-instagram"><a><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}" draggable="false"></a></li>
+                                            <li class="social-pinterest"><a><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }}" draggable="false"></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -91,7 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="row mt-60">
+                            <div class="row mt-60">
                                 <div class="col-12">
                                     <h3 class="section-title style-1 mb-30">Related products</h3>
                                 </div>
@@ -101,11 +100,11 @@
                                         <div class="col-lg-3 col-md-4 col-12 col-sm-6">
                                             <div class="product-cart-wrap small hover-up">
                                                 <div class="product-img-action-wrap">
-                                                    <div class="product-img product-img-zoom">
-                                                        <a href="{{ route('product.details', ['slug'=>$rproduct->slug]) }}" tabindex="0">
-                                                            <img class="default-img" src="{{ asset('assets/imgs/shop/product-') }}{{$rproduct->id}}-1.webp" alt="{{ $rproduct->name }}">
-                                                        </a>
-                                                    </div>
+                                                <div class="product-img product-img-zoom">
+                                                    <a href="{{ route('product.details', ['slug'=>$rproduct->slug]) }}" tabindex="0">
+                                                        <img class="default-img" src="{{ asset('assets/imgs/products')}}/{{ $rproduct->image }}" height="200">
+                                                    </a>
+                                                </div>
                                                     <div class="product-badges product-badges-position product-badges-mrg">
                                                         <span class="hot">Hot</span>
                                                     </div>
@@ -113,11 +112,10 @@
                                                 <div class="product-content-wrap">
                                                     <h2><a href="{{ route('product.details', ['slug'=>$rproduct->slug]) }}" tabindex="0">{{ $rproduct->name }}</a></h2>
                                                     <div class="rating-result" title="90%">
-                                                        <span>
-                                                        </span>
+                                                        <span></span>
                                                     </div>
                                                     <div class="product-price">
-                                                        <span>Rp{{ $rproduct->regular_price }} </span>
+                                                        <span>Rp{{ number_format($rproduct->regular_price, 0) }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,7 +123,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
