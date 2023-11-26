@@ -117,8 +117,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="blog.html">Blog </a></li>     
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>                               
+                                <li><a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
+                                <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                                 @auth
                                     <li><a href="#">My Account <i class="fi-rs-angle-down"></i></a>
                                         @if(Auth::user()->utype == 'ADM')
@@ -138,7 +138,6 @@
                             </ul>
                         </nav>
                     </div>
-                    <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%</p>
                     <div class="header-action-right d-block d-lg-none">
                         <div class="header-action-2">
                             @livewire('wishlist-icon-component')
@@ -204,7 +203,7 @@
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                         </ul>
                     </nav>
@@ -263,9 +262,9 @@
                         <h5 class="widget-title wow fadeIn animated">About</h5>
                         <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
                             <li><a href="{{ route('about') }}">About Us</a></li>
+                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Contact Us</a></li>                            
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-3">

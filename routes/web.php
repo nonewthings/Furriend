@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', App\Http\Livewire\HomeComponent::class)->name('home.index');
+Route::get('/contact', App\Http\Livewire\ContactComponent::class)->name('contact');
 Route::get('/about', App\Http\Livewire\AboutComponent::class)->name('about');
 Route::get('/shop', App\Http\Livewire\ShopComponent::class)->name('shop');
 Route::get('/product/{slug}', App\Http\Livewire\DetailsComponent::class)->name('product.details');
