@@ -116,7 +116,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog </a></li>     
+                                <li><a class="{{ request()->routeIs('blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
                                 <li><a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
                                 <li><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                                 @auth
@@ -202,7 +202,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="blog.html">Blog</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
                         </ul>
@@ -249,13 +249,7 @@
                             </p>
                             <p class="wow fadeIn animated">
                                 <strong>Email: </strong>contact@furriend.io
-                            </p><br>
-                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}"></a>
-                                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}"></a>
-                                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}"></a>
-                                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-youtube.svg') }}"></a>
-                            </div>
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3">
@@ -263,8 +257,6 @@
                         <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
                             <li><a href="{{ route('about') }}">About Us</a></li>
                             <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-3">
@@ -272,12 +264,12 @@
                         <ul class="footer-list wow fadeIn animated">
                             @auth
                                 <li><a href="{{ Auth::user()->utype == 'ADM' ? route('admin.dashboard') : route('user.dashboard') }}">My Account</a></li>
-                                <li><a href="{{ route('shop.cart') }}">View Cart</a></li>
                                 <li><a href="{{ route('shop.wishlist') }}">My Wishlist</a></li>
+                                <li><a href="{{ route('shop.cart') }}">View Cart</a></li>
                             @else
                                 <li><a href="{{ route('login') }}">My Account</a></li>
-                                <li><a href="{{ route('shop.cart') }}">View Cart</a></li>
                                 <li><a href="{{ route('shop.wishlist') }}">My Wishlist</a></li>
+                                <li><a href="{{ route('shop.cart') }}">View Cart</a></li>
                             @endauth
                         </ul>
                     </div>
@@ -286,6 +278,12 @@
                             <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
                                 <p class="mb-20 mt-10 wow fadeIn animated">Secured Payment Gateways</p>
                                 <img class="wow fadeIn animated" src="{{ asset('assets/imgs/theme/payment-method.png') }}" draggable="false">
+                            </div>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 mt-4">
+                                <a><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}" draggable="false"></a>
+                                <a><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}" draggable="false"></a>
+                                <a><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}" draggable="false"></a>
+                                <a><img src="{{ asset('assets/imgs/theme/icons/icon-youtube.svg') }}" draggable="false"></a>
                             </div>
                         </div>
                     </div>
