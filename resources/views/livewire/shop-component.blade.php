@@ -93,7 +93,7 @@
                                         <h2><a href="{{ route('product.details', ['slug'=>$product->slug]) }}">{{ $product->name }}</a></h2>
                                         <div class="rating-result" title="90%">
                                             <span>
-                                                <span>90%</span>
+                                                <span>10%</span>
                                             </span>
                                         </div>
                                         <div class="product-price">
@@ -149,49 +149,6 @@
                             <div class="list-group"><div class="list-group-item mb-10 mt-10"><label class="fw-900 mt-15"></label><div class=""></div></div></div>
                             <a class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Filter</a>
                         </div>
-                        <!-- Product Sidebar Widget -->
-                        <!-- <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
-                            <div class="widget-header position-relative mb-20 pb-10">
-                                <h5 class="widget-title mb-10">New products</h5>
-                                <div class="bt-1 border-color-1"></div>
-                            </div>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h5><a href="product-details.html">Chen Cardigan</a></h5>
-                                    <p class="price mb-0 mt-5">$99.50</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:90%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h6><a href="product-details.html">Chen Sweater</a></h6>
-                                    <p class="price mb-0 mt-5">$89.50</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:80%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-post clearfix">
-                                <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg') }}" alt="#">
-                                </div>
-                                <div class="content pt-10">
-                                    <h6><a href="product-details.html">Colorful Jacket</a></h6>
-                                    <p class="price mb-0 mt-5">$25</p>
-                                    <div class="product-rate">
-                                        <div class="product-rating" style="width:60%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

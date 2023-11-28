@@ -36,7 +36,7 @@
                                             <p class="post-exerpt font-medium text-muted mb-30">Bagi pemilik hewan peliharaan yang memiliki kucing kesayangan di rumah, tentunya tidak mau kucingnya terserang kutu. Seperti yang kita tahu, jika hewan kesayangan kita sampai dihinggapi kutu, tentu dapat membuat kucing menjadi merasa tidak nyaman.</p>
                                             <div class="mb-20 entry-meta meta-2">
                                                 <div class="font-xs ">
-                                                    <span class="post-by">By <a">Alvin</a></span>
+                                                    <span class="post-by">By <a">Alvin Febrianto</a></span>
                                                     <span class="post-on">11/10/2023</span>
                                                     <span class="time-reading">5 mins read</span>
                                                     <p class="font-xs mt-5">Updated 12/10/2023</p>

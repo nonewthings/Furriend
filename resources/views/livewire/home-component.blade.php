@@ -105,7 +105,7 @@
                                             <h2><a href="{{ route('product.details', ['slug'=>$fproduct->slug]) }}">{{ $fproduct->name }}</a></h2>
                                             <div class="rating-result" title="90%">
                                                 <span>
-                                                    <span>30%</span>
+                                                    <span>15%</span>
                                                 </span>
                                             </div>
                                             <div class="product-price">
