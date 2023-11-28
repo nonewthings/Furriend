@@ -4852,6 +4852,9 @@ table .product-thumbnail img {
 
 .single-thumbnail {
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .single-thumbnail img {
