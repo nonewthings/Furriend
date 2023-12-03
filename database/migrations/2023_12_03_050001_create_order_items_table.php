@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('product_id')->unsigned();
             $table->bigInteger('order_id')->unsigned();
-            $table->decimal('price');
+            $table->decimal('price', 10, 0);
             $table->integer('quantity');
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');

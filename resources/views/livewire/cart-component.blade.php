@@ -3,7 +3,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
+                    <a href="/" rel="nofollow">Home</a>
                     <span></span> Shop
                     <span></span> Your Cart
                 </div>
@@ -76,10 +76,6 @@
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tbody>
-                                                <tr>
-                                                    <td class="cart_total_label">Cart Subtotal</td>
-                                                    <td class="cart_total_amount"><span class="font-lg fw-900 text-brand">Rp{{ Cart::subtotal() }}</span></td>
-                                                </tr>
                                                 <tr>
                                                     <td class="cart_total_label">Total</td>
                                                     <td class="cart_total_amount"><strong><span class="font-xl fw-900 text-brand">Rp{{ Cart::total() }}</span></strong></td>

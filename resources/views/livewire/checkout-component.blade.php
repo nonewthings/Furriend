@@ -11,6 +11,7 @@
         </div>
         <section class="mt-50 mb-50">
             <div class="container">
+                <form wire:submit.prevent="placeOrder">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-25">
@@ -18,28 +19,36 @@
                         </div>
                         <form method="post">
                             <div class="form-group">
-                                <input type="text" required="" name="fname" placeholder="First name *">
+                                <input type="text" required="" name="fname" placeholder="First name *" wire:model="firstname">
+                                @error('firstname') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" required="" name="lname" placeholder="Last name *">
+                                <input type="text" required="" name="lname" placeholder="Last name *" wire:model="lastname">
+                                @error('lastname') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" name="billing_address" required="" placeholder="Address *">
+                                <input type="text" name="billing_address" required="" placeholder="Address *" wire:model="address">
+                                @error('address') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <input required="" type="text" name="city" placeholder="City *">
+                                <input required="" type="text" name="city" placeholder="City *" wire:model="city">
+                                @error('city') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <input required="" type="text" name="state" placeholder="Province *">
+                                <input required="" type="text" name="province" placeholder="Province *" wire:model="province">
+                                @error('province') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <input required="" type="text" name="zipcode" placeholder="Postcode *">
+                                <input required="" type="text" name="zipcode" placeholder="Postcode *" wire:model="zipcode">
+                                @error('zipcode') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <input required="" type="text" name="phone" placeholder="Phone *">
+                                <input required="" type="text" name="phone" placeholder="Phone *" wire:model="phone">
+                                @error('phone') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <input required="" type="text" name="email" placeholder="Email address *">
+                                <input required="" type="text" name="email" placeholder="Email address *" wire:model="email">
+                                @error('email') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                         </form>
                     </div>
@@ -66,10 +75,12 @@
                                             <td>Rp{{ number_format($item->subtotal, 0) }}</td>
                                         </tr>
                                         @endforeach
+                                        @if(Session::has('checkout'))
                                         <tr>
                                             <th>Total</th>
-                                            <td colspan="2" class="product-subtotal"><span class="font-xl text-brand fw-900">Rp{{ Cart::total() }}</span></td>
+                                            <td colspan="2" class="product-subtotal"><span class="font-xl text-brand fw-900">Rp{{ Session::get('checkout')['total'] }}</span></td>
                                         </tr>
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
@@ -80,23 +91,21 @@
                                 </div>
                                 <div class="payment_option">
                                     <div class="custome-radio">
-                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3">
+                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="cod" wire:model="paymentmode">
                                         <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse" data-target="#cashOnDelivery" aria-controls="cashOnDelivery">Cash on Delivery</label>                                        
                                     </div>
                                     <div class="custome-radio">
-                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios4">
-                                        <label class="form-check-label" for="exampleRadios4" data-bs-toggle="collapse" data-target="#cardPayment" aria-controls="cardPayment">Card Payment</label>                                        
+                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios4" value="card" wire:model="paymentmode">
+                                        <label class="form-check-label" for="exampleRadios4" data-bs-toggle="collapse" data-target="#cardPayment" aria-controls="cardPayment">Debit / Credit Card</label>                                        
                                     </div>
-                                    <div class="custome-radio">
-                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios5">
-                                        <label class="form-check-label" for="exampleRadios5" data-bs-toggle="collapse" data-target="#paypal" aria-controls="paypal">Paypal</label>                                        
-                                    </div>
+                                    @error('paymentmode') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-fill-out btn-block mt-30">Order</a>
+                            <button type="submit" class="btn btn-fill-out btn-block mt-30">Order</button>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </section>
     </main>

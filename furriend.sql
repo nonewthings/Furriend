@@ -124,7 +124,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -139,10 +139,10 @@ INSERT INTO `migrations` VALUES (17, '2023_11_02_153739_create_home_sliders_tabl
 INSERT INTO `migrations` VALUES (18, '2023_11_07_132338_add_image_and_is_popular_column_to_categories_table', 1);
 INSERT INTO `migrations` VALUES (19, '2023_11_26_082905_create_contacts_table', 1);
 INSERT INTO `migrations` VALUES (20, '2023_11_27_145706_create_blog_posts_table', 1);
-INSERT INTO `migrations` VALUES (21, '2023_12_03_045556_create_orders_table', 2);
-INSERT INTO `migrations` VALUES (22, '2023_12_03_050001_create_order_items_table', 3);
-INSERT INTO `migrations` VALUES (23, '2023_12_03_050039_create_shippings_table', 4);
-INSERT INTO `migrations` VALUES (24, '2023_12_03_050127_create_transactions_table', 5);
+INSERT INTO `migrations` VALUES (26, '2023_12_03_045556_create_orders_table', 7);
+INSERT INTO `migrations` VALUES (27, '2023_12_03_050001_create_order_items_table', 8);
+INSERT INTO `migrations` VALUES (28, '2023_12_03_050039_create_shippings_table', 9);
+INSERT INTO `migrations` VALUES (29, '2023_12_03_050127_create_transactions_table', 10);
 
 -- ----------------------------
 -- Table structure for order_items
@@ -152,7 +152,7 @@ CREATE TABLE `order_items`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `product_id` bigint UNSIGNED NOT NULL,
   `order_id` bigint UNSIGNED NOT NULL,
-  `price` decimal(8, 2) NOT NULL,
+  `price` decimal(10, 0) NOT NULL,
   `quantity` int NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -161,11 +161,13 @@ CREATE TABLE `order_items`  (
   INDEX `order_items_order_id_foreign`(`order_id` ASC) USING BTREE,
   CONSTRAINT `order_items_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `order_items_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of order_items
 -- ----------------------------
+INSERT INTO `order_items` VALUES (7, 4, 4, 85000, 1, '2023-12-03 17:17:27', '2023-12-03 17:17:27');
+INSERT INTO `order_items` VALUES (8, 6, 4, 7000, 5, '2023-12-03 17:17:27', '2023-12-03 17:17:27');
 
 -- ----------------------------
 -- Table structure for orders
@@ -174,13 +176,13 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` bigint UNSIGNED NOT NULL,
-  `subtotal` decimal(8, 2) NOT NULL,
-  `discount` decimal(8, 2) NOT NULL DEFAULT 0.00,
-  `tax` decimal(8, 2) NOT NULL DEFAULT 0.00,
-  `total` decimal(8, 2) NOT NULL,
+  `subtotal` decimal(10, 0) NOT NULL,
+  `total` decimal(10, 0) NOT NULL,
+  `discount` decimal(10, 0) NOT NULL DEFAULT 0,
+  `tax` decimal(10, 0) NOT NULL DEFAULT 0,
   `firstname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `lastname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `province` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -193,11 +195,12 @@ CREATE TABLE `orders`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `orders_user_id_foreign`(`user_id` ASC) USING BTREE,
   CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+INSERT INTO `orders` VALUES (4, 2, 120000, 120000, 0, 0, 'Alvin', 'Febrianto', '089666666666', 'alvinfebrianto@gmail.com', 'Kandangan Bakti III-A/2', 'Jawa Timur', 'Surabaya', '60199', 'ordered', 0, '2023-12-03 17:17:27', '2023-12-03 17:17:27');
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -323,11 +326,12 @@ CREATE TABLE `transactions`  (
   INDEX `transactions_order_id_foreign`(`order_id` ASC) USING BTREE,
   CONSTRAINT `transactions_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of transactions
 -- ----------------------------
+INSERT INTO `transactions` VALUES (4, 2, 4, 'cod', 'pending', '2023-12-03 17:17:27', '2023-12-03 17:17:27');
 
 -- ----------------------------
 -- Table structure for users

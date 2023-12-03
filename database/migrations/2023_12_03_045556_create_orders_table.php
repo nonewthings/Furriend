@@ -11,13 +11,13 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->decimal('subtotal');
-            $table->decimal('discount')->default(0);
-            $table->decimal('tax')->default(0);
-            $table->decimal('total');
+            $table->decimal('subtotal', 10, 0);
+            $table->decimal('total', 10, 0);
+            $table->decimal('discount', 10, 0)->default(0);
+            $table->decimal('tax', 10, 0)->default(0);
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('mobile');
+            $table->string('phone');
             $table->string('email');
             $table->string('address');
             $table->string('province');
