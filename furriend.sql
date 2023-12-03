@@ -124,7 +124,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -139,6 +139,65 @@ INSERT INTO `migrations` VALUES (17, '2023_11_02_153739_create_home_sliders_tabl
 INSERT INTO `migrations` VALUES (18, '2023_11_07_132338_add_image_and_is_popular_column_to_categories_table', 1);
 INSERT INTO `migrations` VALUES (19, '2023_11_26_082905_create_contacts_table', 1);
 INSERT INTO `migrations` VALUES (20, '2023_11_27_145706_create_blog_posts_table', 1);
+INSERT INTO `migrations` VALUES (21, '2023_12_03_045556_create_orders_table', 2);
+INSERT INTO `migrations` VALUES (22, '2023_12_03_050001_create_order_items_table', 3);
+INSERT INTO `migrations` VALUES (23, '2023_12_03_050039_create_shippings_table', 4);
+INSERT INTO `migrations` VALUES (24, '2023_12_03_050127_create_transactions_table', 5);
+
+-- ----------------------------
+-- Table structure for order_items
+-- ----------------------------
+DROP TABLE IF EXISTS `order_items`;
+CREATE TABLE `order_items`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `product_id` bigint UNSIGNED NOT NULL,
+  `order_id` bigint UNSIGNED NOT NULL,
+  `price` decimal(8, 2) NOT NULL,
+  `quantity` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `order_items_product_id_foreign`(`product_id` ASC) USING BTREE,
+  INDEX `order_items_order_id_foreign`(`order_id` ASC) USING BTREE,
+  CONSTRAINT `order_items_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `order_items_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of order_items
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for orders
+-- ----------------------------
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `subtotal` decimal(8, 2) NOT NULL,
+  `discount` decimal(8, 2) NOT NULL DEFAULT 0.00,
+  `tax` decimal(8, 2) NOT NULL DEFAULT 0.00,
+  `total` decimal(8, 2) NOT NULL,
+  `firstname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `province` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zipcode` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('ordered','delivered','canceled') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ordered',
+  `is_shipping_different` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `orders_user_id_foreign`(`user_id` ASC) USING BTREE,
+  CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of orders
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -220,6 +279,55 @@ INSERT INTO `products` VALUES (7, 'Whiskas® Pouch Dewasa 1+ Ikan Kembung', 'whi
 INSERT INTO `products` VALUES (8, 'ROYAL CANIN® Mini Adult in Gravy', 'royal-canin-mini-adult-in-gravy', 'Complete feed for dogs - For adult small breed dogs (from 1 to 10 kg) - From 10 months to 12 years old.', 'ROYAL CANIN® Mini Adult in Gravy is specially formulated with all the nutritional needs of your mini adult dog in mind.\nROYAL CANIN® Mini Adult in Gravy is suitable for all small dogs aged between 10 months – 12 years that weigh up to 10kg.\nThe formulation of specific nutrients in ROYAL CANIN® Mini Adult in Gravy helps to support your dog’s digestive health, as well as helping to maintain a good balance of intestinal flora.\nThe carefully adapted energy content in ROYAL CANIN® Mini Adult in Gravy helps to maintain an ideal weight in small breed dogs like yours.\nWhat’s more, ROYAL CANIN® Mini Adult in Gravy is also enriched with nutrients that help to support your adult dog’s healthy skin and coat condition – such as Omega-3 fatty acids EPA and DHA. \nTo cater to each dog’s individual preferences, ROYAL CANIN® Mini Adult is also available as dry food, with crunchy and tasty kibble.\nIf you’re considering mixed feeding, simply follow our feeding guidelines to ensure your dog gets an accurate amount of both wet and dry food for optimal benefit.', 70000, 68000, 'RCMAIG', 'instock', 0, 10, '1701181341.webp', NULL, 2, '2023-11-28 14:22:21', '2023-11-28 14:23:53');
 INSERT INTO `products` VALUES (9, 'ROYAL CANIN® Medium Starter Mother & Babydog', 'royal-canin-medium-starter-mother-babydog', 'Complete feed for dogs - For the medium breed bitch (from 11 to 25 kg) and her puppies: bitch at the end of gestation and during lactation - Weaning puppies up to 2 months old', 'ROYAL CANIN® Medium Starter Mother & Babydog is specially formulated to support the nutritional needs of new mothers and their puppies. This formula is suitable for medium-sized adult dogs that weigh between 11 and 25 kg, and for weaning puppies up to 2 months old.\nThis tailored diet is specially adapted to meet your medium-sized dog’s high energy needs, while also supporting the healthy development of your nursing puppies.\nIt also contains a proven complex including Vitamins C and E to support healthy immune system development.\nThis formula includes beneficial prebiotics and highly digestible proteins to help support a healthy balance of intestinal microbiota (gut flora) for good digestion.\nROYAL CANIN® Medium Starter Mother & Babydog is enriched with Omega-3 fatty acids to help support healthy brain development in young puppies.\nThe kibble in ROYAL CANIN® Medium Starter Mother & Babydog is easy to rehydrate with water, giving it an appetising porridge texture that’s ideal for weaning puppies.\nIn the short span of 8 weeks, your puppies will need a diet that’s specially adapted to meet their nutritional needs during the next growth phase. At this stage, you can transition them onto ROYAL CANIN® Medium Puppy, available either as a dry kibble diet or with wet chunks in gravy.', 110000, 105000, 'RCMSMB', 'instock', 0, 8, '1701181661.webp', NULL, 1, '2023-11-28 14:27:41', '2023-11-28 14:27:41');
 INSERT INTO `products` VALUES (10, 'Bola Mainan Cakar Kucing - Cat Scratche - Small', 'bola-mainan-cakar-kucing-cat-scratche-small', 'Kucing memiliki keinginan alami untuk menggaruk: tindakan yang dapat membantu kucing untuk mengasah kukunya dan untuk menandai wilayah mereka', 'Kucing memiliki keinginan alami untuk menggaruk: tindakan yang dapat membantu kucing untuk mengasah kukunya dan untuk menandai wilayah mereka dengan kelenjar bau di kaki mereka. Penyediaan garukan kucing bertujuan agar kucing tidak menggaruk pada furnitur yang ada di rumah yang dapat merusak furnitur.\n\nKelebihan:\n🐾Bentuk bola yg bisa diputar 360 derajat sangat menarik untuk bermain dan membawa kegembiraan bagi anabul\n🐾Mudah untuk dipasang dan dimainkan\n🐾Terbuat dari kayu solid dan bahan tali rami natural yg aman untuk anabul\n🐾Tampilan minimalist dengan desain modern', 55000, 50000, 'BMCKCSS', 'instock', 0, 5, '1701183147.webp', NULL, 5, '2023-11-28 14:52:27', '2023-11-28 14:52:27');
+
+-- ----------------------------
+-- Table structure for shippings
+-- ----------------------------
+DROP TABLE IF EXISTS `shippings`;
+CREATE TABLE `shippings`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `order_id` bigint UNSIGNED NOT NULL,
+  `firstname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `province` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zipcode` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `shippings_order_id_foreign`(`order_id` ASC) USING BTREE,
+  CONSTRAINT `shippings_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of shippings
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for transactions
+-- ----------------------------
+DROP TABLE IF EXISTS `transactions`;
+CREATE TABLE `transactions`  (
+  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `order_id` bigint UNSIGNED NOT NULL,
+  `mode` enum('cod','card','paypal') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('pending','approved','declined','refunded') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pending',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `transactions_user_id_foreign`(`user_id` ASC) USING BTREE,
+  INDEX `transactions_order_id_foreign`(`order_id` ASC) USING BTREE,
+  CONSTRAINT `transactions_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of transactions
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for users
