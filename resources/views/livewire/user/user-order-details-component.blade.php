@@ -2,6 +2,9 @@
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12 mb-20">
+                @if(Session::has('order_message'))
+                    <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
+                @endif
                 <div class="card">
                     <div class="card-header">
                         <div class="row justify-content-between">
@@ -9,7 +12,10 @@
                                 Order Details
                             </div>
                             <div class="col-md-6 text-end">
-                                <a href="{{route('admin.orders')}}" class="btn btn-success">All Orders</a>
+                                @if($order->status == 'ordered')
+                                <a href="#" wire:click.prevent="cancelOrder" class="btn btn-success me-2">Cancel Order</a>
+                                @endif
+                                <a href="{{route('user.orders')}}" class="btn btn-success">My Orders</a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +161,7 @@
                                 <tr>
                                     <th><strong>Transaction Date:</strong></th>
                                     <td>{{$order->transaction->created_at}}</td>
-                                </tr><tr><th></th><th></th></tr>
+                                </tr><tr><th></th><th></th</tr>
                             </table>
                         </div>
                     </div>

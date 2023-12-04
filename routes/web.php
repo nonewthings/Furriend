@@ -16,6 +16,8 @@ Route::get('/search', App\Http\Livewire\SearchComponent::class)->name('product.s
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard', App\Http\Livewire\User\UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/orders', App\Http\Livewire\User\UserOrderComponent::class)->name('user.orders');
+    Route::get('/user/orders/{order_id}', App\Http\Livewire\User\UserOrderDetailsComponent::class)->name('user.orderdetails');
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){

@@ -21,8 +21,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-4 col-lg-4"></div>
-                    <div class="col-xl-5 col-lg-4"></div>
-                    <div class="col-xl-3 col-lg-4">
+                    <div class="col-xl-4 col-lg-4"></div>
+                    <div class="col-xl-4 col-lg-4">
                         <div class="header-info header-info-right">
                             @auth
                             <ul>                                
@@ -132,6 +132,7 @@
                                         @else
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                                <li><a href="{{ route('user.orders') }}">Orders</a></li>
                                             </ul>
                                         @endif
                                     </li>
@@ -219,6 +220,7 @@
                                     @else
                                         <ul class="dropdown">
                                             <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                            <li><a href="{{ route('user.orders') }}">Orders</a></li>
                                         </ul>
                                     @endif
                                 </li>

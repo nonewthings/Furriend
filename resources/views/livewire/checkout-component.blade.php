@@ -94,10 +94,6 @@
                                         <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" value="cod" wire:model="paymentmode">
                                         <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse" data-target="#cashOnDelivery" aria-controls="cashOnDelivery">Cash on Delivery</label>                                        
                                     </div>
-                                    <div class="custome-radio">
-                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios4" value="card" wire:model="paymentmode">
-                                        <label class="form-check-label" for="exampleRadios4" data-bs-toggle="collapse" data-target="#cardPayment" aria-controls="cardPayment">Debit / Credit Card</label>                                        
-                                    </div>
                                     @error('paymentmode') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
