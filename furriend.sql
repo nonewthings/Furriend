@@ -124,7 +124,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -143,6 +143,7 @@ INSERT INTO `migrations` VALUES (26, '2023_12_03_045556_create_orders_table', 7)
 INSERT INTO `migrations` VALUES (27, '2023_12_03_050001_create_order_items_table', 8);
 INSERT INTO `migrations` VALUES (28, '2023_12_03_050039_create_shippings_table', 9);
 INSERT INTO `migrations` VALUES (29, '2023_12_03_050127_create_transactions_table', 10);
+INSERT INTO `migrations` VALUES (30, '2023_12_04_121050_add_delivered_canceled_date_to_orders_table', 11);
 
 -- ----------------------------
 -- Table structure for order_items
@@ -193,6 +194,8 @@ CREATE TABLE `orders`  (
   `is_shipping_different` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `delivered_date` date NULL DEFAULT NULL,
+  `canceled_date` date NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `orders_user_id_foreign`(`user_id` ASC) USING BTREE,
   CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
@@ -201,8 +204,8 @@ CREATE TABLE `orders`  (
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES (4, 2, 120000, 120000, 0, 0, 'Alvin', 'Febrianto', '089666666666', 'alvinfebrianto@gmail.com', 'Kandangan Bakti III-A/2', 'Jawa Timur', 'Surabaya', '60199', 'ordered', 0, '2023-12-03 17:17:27', '2023-12-03 17:17:27');
-INSERT INTO `orders` VALUES (5, 2, 85000, 85000, 0, 0, 'Alvin', 'Febrianto', '089666666666', 'alvinfebrianto@gmail.com', 'Kandangan Gunung Bakti III-A/2', 'Jawa Timur', 'Surabaya', '60199', 'ordered', 0, '2023-12-04 04:36:19', '2023-12-04 04:36:19');
+INSERT INTO `orders` VALUES (4, 2, 120000, 120000, 0, 0, 'Alvin', 'Febrianto', '089666666666', 'alvinfebrianto@gmail.com', 'Kandangan Bakti III-A/2', 'Jawa Timur', 'Surabaya', '60199', 'ordered', 0, '2023-12-03 17:17:27', '2023-12-04 15:08:10', NULL, '2023-12-04');
+INSERT INTO `orders` VALUES (5, 2, 85000, 85000, 0, 0, 'Alvin', 'Febrianto', '089666666666', 'alvinfebrianto@gmail.com', 'Kandangan Gunung Bakti III-A/2', 'Jawa Timur', 'Surabaya', '60199', 'ordered', 0, '2023-12-04 04:36:19', '2023-12-04 14:29:30', '2023-12-04', '2023-12-04');
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -352,12 +355,14 @@ CREATE TABLE `users`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES (1, 'Admin', 'admin@furriend.io', NULL, '$2y$10$JC2QZVuOW/9LpRFg1mvJguqoGKWHa6Be3Ee7bEoLX9IReClaT7Rlq', 'ADM', NULL, '2023-11-28 08:02:40', '2023-11-28 08:02:40');
 INSERT INTO `users` VALUES (2, 'Alvin Febrianto', 'alvin@furriend.io', NULL, '$2y$10$qhn6LB/Ewayn2PaY45vF4OPjykgkL7mO6VhXZuOsaY97H337lUedG', 'USR', NULL, '2023-11-28 09:20:29', '2023-11-28 09:20:29');
+INSERT INTO `users` VALUES (3, 'Fisma Meividianugraha Subani', 'fisma@furriend.io', NULL, '$2y$10$5ewTn3EUhOKNpMYEPtTEwexsSdXY8gxS5o5ABG/QiD5qclf2Vf7cm', 'USR', NULL, '2023-12-04 12:03:58', '2023-12-04 12:03:58');
+INSERT INTO `users` VALUES (4, 'Rahmad Firdiansyah', 'rahmad@furriend.io', NULL, '$2y$10$h1A8uG7lL8Q9x0uFwjX5KeEixiJbI0IFqS2hSDxf5qdft0DHq.TV2', 'USR', NULL, '2023-12-04 12:07:51', '2023-12-04 12:07:51');
 
 SET FOREIGN_KEY_CHECKS = 1;
