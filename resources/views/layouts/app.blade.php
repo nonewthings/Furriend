@@ -124,9 +124,10 @@
                                         @if(Auth::user()->utype == 'ADM')
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                                <li><a href="{{ route('admin.products') }}">Products</a></li>
                                                 <li><a href="{{ route('admin.categories') }}">Categories</a></li>
-                                                <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li>
+                                                <li><a href="{{ route('admin.products') }}">Products</a></li>
+                                                <li><a href="{{ route('admin.orders') }}">Orders</a></li>
+                                                <li><a href="{{ route('admin.home.slider') }}">Sliders</a></li>
                                             </ul>
                                         @else
                                             <ul class="sub-menu">
@@ -205,6 +206,23 @@
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
                             <li class="menu-item-has-children"><span class="menu-expand"></span><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a></li>
+                            @auth
+                                <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">My Account</a>
+                                    @if(Auth::user()->utype == 'ADM')
+                                        <ul class="dropdown">
+                                            <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                            <li><a href="{{ route('admin.categories') }}">Categories</a></li>
+                                            <li><a href="{{ route('admin.products') }}">Products</a></li>
+                                            <li><a href="{{ route('admin.orders') }}">Orders</a></li>
+                                            <li><a href="{{ route('admin.home.slider') }}">Sliders</a></li>
+                                        </ul>
+                                    @else
+                                        <ul class="dropdown">
+                                            <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endif
                         </ul>
                     </nav>
                 </div>

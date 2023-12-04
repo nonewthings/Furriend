@@ -39,6 +39,10 @@ class CheckoutComponent extends Component
 
     public function placeOrder()
     {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
         $this->validate([
             'firstname' => 'required',
             'lastname' => 'required',

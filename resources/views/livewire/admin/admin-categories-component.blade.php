@@ -74,7 +74,6 @@
         </section>
     </main>
 </div>
-
 <div class="modal" id="deleteConfirmation">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -90,14 +89,12 @@
         </div>
     </div>
 </div>
-
 @push('scripts')
     <script>
         function deleteConfirmation(id) {
             @this.set('category_id', id);
             $('#deleteConfirmation').modal('show');
-        }
-        
+        }    
         function deleteCategory() {
             @this.call('deleteCategory');
             $('#deleteConfirmation').modal('hide');

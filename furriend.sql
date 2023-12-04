@@ -161,13 +161,14 @@ CREATE TABLE `order_items`  (
   INDEX `order_items_order_id_foreign`(`order_id` ASC) USING BTREE,
   CONSTRAINT `order_items_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `order_items_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of order_items
 -- ----------------------------
 INSERT INTO `order_items` VALUES (7, 4, 4, 85000, 1, '2023-12-03 17:17:27', '2023-12-03 17:17:27');
 INSERT INTO `order_items` VALUES (8, 6, 4, 7000, 5, '2023-12-03 17:17:27', '2023-12-03 17:17:27');
+INSERT INTO `order_items` VALUES (9, 4, 5, 85000, 1, '2023-12-04 04:36:20', '2023-12-04 04:36:20');
 
 -- ----------------------------
 -- Table structure for orders
@@ -195,12 +196,13 @@ CREATE TABLE `orders`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `orders_user_id_foreign`(`user_id` ASC) USING BTREE,
   CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
 INSERT INTO `orders` VALUES (4, 2, 120000, 120000, 0, 0, 'Alvin', 'Febrianto', '089666666666', 'alvinfebrianto@gmail.com', 'Kandangan Bakti III-A/2', 'Jawa Timur', 'Surabaya', '60199', 'ordered', 0, '2023-12-03 17:17:27', '2023-12-03 17:17:27');
+INSERT INTO `orders` VALUES (5, 2, 85000, 85000, 0, 0, 'Alvin', 'Febrianto', '089666666666', 'alvinfebrianto@gmail.com', 'Kandangan Gunung Bakti III-A/2', 'Jawa Timur', 'Surabaya', '60199', 'ordered', 0, '2023-12-04 04:36:19', '2023-12-04 04:36:19');
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -326,12 +328,13 @@ CREATE TABLE `transactions`  (
   INDEX `transactions_order_id_foreign`(`order_id` ASC) USING BTREE,
   CONSTRAINT `transactions_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `transactions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of transactions
 -- ----------------------------
 INSERT INTO `transactions` VALUES (4, 2, 4, 'cod', 'pending', '2023-12-03 17:17:27', '2023-12-03 17:17:27');
+INSERT INTO `transactions` VALUES (5, 2, 5, 'cod', 'pending', '2023-12-04 04:36:20', '2023-12-04 04:36:20');
 
 -- ----------------------------
 -- Table structure for users
