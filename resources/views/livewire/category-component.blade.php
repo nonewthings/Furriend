@@ -16,6 +16,7 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian konten utama halaman category -->
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
@@ -25,6 +26,7 @@
                                 <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you from <strong class="text-brand">{{ $category_name }}</strong> category</p>
                             </div>
                             <div class="sort-by-product-area">
+                                <!-- Filter jumlah item yang ditampilkan -->
                                 <div class="sort-by-cover mr-10">
                                     <div class="sort-by-product-wrap">
                                         <div class="sort-by">
@@ -63,6 +65,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Tampilan grid produk -->
                         <div class="row product-grid-3">
                             @php
                                 $witems = Cart::instance('wishlist')->content()->pluck('id');
@@ -105,7 +108,7 @@
                             </div>
                             @endforeach
                         </div>
-                        <!--Pagination-->
+                        <!--Pagination produk-->
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
                             {{ $products->links() }}
                         </div>
@@ -148,6 +151,7 @@
         </section>
     </main>
 </div>
+<!-- Script JavaScript untuk slider range harga -->
 @push('scripts')
     <script>
         var sliderrange = $('#slider-range');

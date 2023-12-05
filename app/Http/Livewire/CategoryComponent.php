@@ -18,23 +18,28 @@ class CategoryComponent extends Component
     public $min_value = 0;
     public $max_value = 1000000;
 
+    // Dipanggil saat komponen di-mount dengan slug kategori
     public function mount($slug)
     {
         $this->slug = $slug;
     }
     
+    // Fungsi untuk mengubah jumlah produk per halaman
     public function changePageSize($size)
     {
         $this->pageSize = $size;
     }
 
+    // Fungsi untuk mengubah urutan produk
     public function changeOrderBy($order)
     {
         $this->orderBy = $order;
     }
 
+    // Menambahkan produk ke keranjang belanja
     public function store($product_id, $product_name, $product_price)
     {
+        // Memeriksa apakah pengguna sudah login
         if (Auth::check()) {
             Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
             session()->flash('success_message', 'Item added in cart');
@@ -45,6 +50,7 @@ class CategoryComponent extends Component
         }
     }
 
+    // Menambahkan produk ke daftar wishlist
     public function addToWishlist($product_id, $product_name, $product_price)
     {
         if (Auth::check()) {
@@ -55,6 +61,7 @@ class CategoryComponent extends Component
         }
     }
 
+    // Menghapus produk dari daftar wishlist
     public function removeFromWishlist($product_id)
     {
         foreach(Cart::instance('wishlist')->content() as $witem);
@@ -70,6 +77,7 @@ class CategoryComponent extends Component
     
     public function render()
     {
+        // Mendapatkan informasi kategori berdasarkan slug
         $category = Category::where('slug', $this->slug)->first();
         $category_id = $category->id;
         $category_name = $category->name;
@@ -89,6 +97,7 @@ class CategoryComponent extends Component
         else{
             $products = Product::where('category_id', $category_id)->paginate($this->pageSize);
         }
+        
         $categories = Category::orderBy('name', 'ASC')->get();
         return view('livewire.category-component', ['products'=>$products, 'categories'=>$categories, 'category_name'=>$category_name]);
     }

@@ -18,6 +18,7 @@ class AdminEditCategoryComponent extends Component
     public $is_popular;
     public $newimage;
 
+    // Fungsi untuk inisialisasi data kategori yang akan diubah
     public function mount($category_id)
     {
         $category = Category::find($category_id);
@@ -28,11 +29,13 @@ class AdminEditCategoryComponent extends Component
         $this->is_popular = $category->is_popular;
     }
 
+    // Fungsi untuk menghasilkan slug dari nama kategori baru
     public function generateSlug()
     {
         $this->slug = Str::slug($this->name);
     }
     
+    // Fungsi yang dipanggil saat ada perubahan pada properti tertentu
     public function updated($fields)
     {
         $this->validateOnly($fields,[
@@ -41,6 +44,7 @@ class AdminEditCategoryComponent extends Component
         ]);
     }
     
+    // Fungsi untuk menyimpan perubahan pada kategori
     public function updateCategory()
     {
         $this->validate([
@@ -48,8 +52,10 @@ class AdminEditCategoryComponent extends Component
             'slug' => 'required'
         ]);
         $category = Category::find($this->category_id);
+        // Update properti kategori dengan nilai yang baru
         $category->name = $this->name;
         $category->slug = $this->slug;
+        // Jika ada gambar baru, hapus gambar lama dan simpan yang baru
         if($this->newimage)
         {
             unlink('assets/imgs/categories/'.$category->image);
@@ -61,6 +67,7 @@ class AdminEditCategoryComponent extends Component
         $category->save();
         session()->flash('message', 'Category has been updated successfully');
     }
+
     public function render()
     {
         return view('livewire.admin.admin-edit-category-component');

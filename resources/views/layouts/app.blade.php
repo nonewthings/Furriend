@@ -17,6 +17,7 @@
 </head>
 <body>
     <header class="header-area header-style-1 header-height-2">
+        <!-- Bagian header atas dengan informasi pengguna atau tautan login/registrasi -->
         <div class="header-top header-top-ptb-1 d-none d-lg-block">
             <div class="container">
                 <div class="row align-items-center">
@@ -43,6 +44,7 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian header tengah dengan logo, pencarian, ikon wishlist, dan keranjang -->
         <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
             <div class="container">
                 <div class="header-wrap">
@@ -61,12 +63,14 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian header bawah dengan menu navigasi -->
         <div class="header-bottom header-bottom-bg-color sticky-bar">
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
                         <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}" alt="Logo"></a>
                     </div>
+                    <!-- Menu navigasi utama -->
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block mx-auto">
                         <nav>
                             <ul>
@@ -140,6 +144,7 @@
                             </ul>
                         </nav>
                     </div>
+                    <!-- Bagian header kanan -->
                     <div class="header-action-right d-block d-lg-none">
                         <div class="header-action-2">
                             @livewire('wishlist-icon-component')
@@ -157,12 +162,14 @@
             </div>
         </div>
     </header>
+    <!-- Wrapper untuk header mobile -->
     <div class="mobile-header-active mobile-header-wrapper-style">
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
                     <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}" alt="Logo"></a>
                 </div>
+                <!-- Tombol untuk menutup menu mobile -->
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
                         <i class="icon-top"></i>
@@ -170,6 +177,7 @@
                     </button>
                 </div>
             </div>
+            <!-- Pencarian untuk tampilan mobile -->
             <div class="mobile-header-content-area">
                 <div class="mobile-search search-style-3 mobile-header-border">
                     <form action="#">
@@ -228,6 +236,7 @@
                         </ul>
                     </nav>
                 </div>
+                <!-- Informasi pengguna untuk tampilan mobile -->
                 <div class="mobile-header-info-wrap mobile-header-border">
                     @auth
                     <ul>                                
@@ -253,7 +262,9 @@
             </div>
         </div>
     </div>
+    <!-- Halaman konten utama yang akan ditampilkan -->
     {{$slot}}
+    <!-- Menampilkan footer yang berisi contact, about, dan my account -->
     <footer class="main">
         <section class="section-padding footer-mid newsletter">
             <div class="container pt-10 pb-20">

@@ -2,6 +2,7 @@
     <div class="container" style="padding: 30px 0;">
         <div class="row">
             <div class="col-md-12 mb-20">
+                <!-- Pemberitahuan Pesanan -->
                 @if(Session::has('order_message'))
                     <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
                 @endif
@@ -15,12 +16,14 @@
                                 @if($order->status == 'ordered')
                                 <a href="#" wire:click.prevent="cancelOrder" class="btn btn-success me-2">Cancel Order</a>
                                 @endif
+                                <!-- Tombol untuk Melihat Semua Pesanan Pengguna -->
                                 <a href="{{route('user.orders')}}" class="btn btn-success">My Orders</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+                            <!-- Tabel untuk Menampilkan Detail Pesanan -->
                             <table class="table text-center clean">
                                 <tr>
                                     <th><strong>Order Id:</strong></th>
@@ -43,6 +46,7 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian untuk Menampilkan Rincian Pesanan -->
         <div class="row">
             <div class="col-md-12 mb-20">
                 <div class="card">
@@ -67,6 +71,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Menampilkan Setiap Item yang Dipesan -->
                                     @foreach($order->orderItems as $item)
                                     <tr>
                                         <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/products')}}/{{ $item->product->image }}" alt="#" draggable="false"></td>
@@ -102,6 +107,7 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian untuk Menampilkan Rincian Pembayaran -->
         <div class="row">
             <div class="col-md-12 mb-20">
                 <div class="card">
@@ -141,6 +147,7 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian untuk Menampilkan Rincian Transaksi -->
         <div class="row">
             <div class="col-md-12">
                 <div class="card">

@@ -1,4 +1,5 @@
 <div>
+    <!-- Bagian utama halaman keranjang belanja -->
     <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -9,6 +10,7 @@
                 </div>
             </div>
         </div>
+        <!-- Menampilkan konten keranjang belanja -->
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
@@ -19,6 +21,7 @@
                                     <strong>Success | {{ Session::get('success_message') }}</strong>
                                 </div>
                             @endif
+                            <!-- Cek apakah keranjang belanja tidak kosong -->
                             @if(Cart::instance('cart')->count() > 0)
                             <table class="table shopping-summery text-center clean">
                                 <thead>
@@ -32,6 +35,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Looping untuk setiap item di keranjang -->
                                     @foreach(Cart::instance('cart')->content() as $item)
                                     <tr>
                                         <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/products')}}/{{ $item->model->image }}" alt="#"></td>
@@ -59,14 +63,17 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <!-- Tampilkan pesan jika keranjang kosong -->
                             @else
                                 <p>No item in cart</p>
                             @endif
                         </div>
+                        <!-- Tombol untuk melanjutkan berbelanja -->
                         <div class="cart-action text-end">
                             <a href="{{ route('shop') }}" class="btn "><i class="fi-rs-shopping-bag mr-10"></i>Continue Shopping</a>
                         </div>
                         <div class="divider center_icon mt-50 mb-50"><i class="fi-rs-fingerprint"></i></div>
+                        <!-- Baris untuk menampilkan ringkasan total pembelian -->
                         <div class="row mb-50">
                             <div class="offset-lg-3 col-lg-6 col-md-12">
                                 <div class="border p-md-4 p-30 border-radius cart-totals">
@@ -83,6 +90,7 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    <!-- Tombol untuk menuju ke halaman checkout -->
                                     <a href="#" class="btn" wire:click.prevent="checkout"><i class="fi-rs-box-alt mr-10"></i> Checkout</a>
                                 </div>
                             </div>

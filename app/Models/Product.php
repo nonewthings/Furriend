@@ -10,6 +10,7 @@ class Product extends Model
 {
     use HasFactory;
 
+    // Relasi dengan model Category: satu produk dimiliki oleh satu kategori
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');

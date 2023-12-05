@@ -18,6 +18,7 @@ class AdminAddHomeSlideComponent extends Component
     public $status = 1;
     public $image;
 
+    // Fungsi untuk menambahkan slide baru
     public function addSlide()
     {
         $this->validate([
@@ -29,7 +30,7 @@ class AdminAddHomeSlideComponent extends Component
             'status' => 'required',
             'image' => 'required'
         ]);
-
+        // Buat instance baru dari model HomeSlider
         $slide = new HomeSlider();
         $slide->top_title = $this->top_title;
         $slide->title = $this->title;
@@ -37,6 +38,8 @@ class AdminAddHomeSlideComponent extends Component
         $slide->offer = $this->offer;
         $slide->link = $this->link;
         $slide->status = $this->status;
+
+        // Simpan gambar yang diunggah dengan nama yang memiliki timestamp
         $imageName = Carbon::now()->timestamp.'.'.$this->image->extension();
         $this->image->storeAs('slider', $imageName);
         $slide->image = $imageName;
@@ -44,6 +47,7 @@ class AdminAddHomeSlideComponent extends Component
         session()->flash('message', 'Slide has been added.');
     }
 
+    // Inisialisasi nilai default untuk status saat komponen dimuat
     public function mount()
     {
         $this->status = 1;

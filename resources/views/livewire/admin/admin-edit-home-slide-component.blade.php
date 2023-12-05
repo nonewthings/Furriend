@@ -19,6 +19,7 @@
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
+                    <!-- Bagian untuk Edit Slide -->
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
@@ -27,14 +28,17 @@
                                         Edit Slide
                                     </div>
                                     <div class="col-md-6">
+                                        <!-- Tombol untuk Navigasi ke Semua Slide -->
                                         <a href="{{ route('admin.home.slider') }}" class="btn btn-success float-end">All Slides</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
+                                <!-- Pemberitahuan Pesan Sukses -->
                                 @if(Session::has('message'))
                                     <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
                                 @endif
+                                <!-- Formulir untuk Mengedit Slide -->
                                 <form wire:submit.prevent="updateSlide">
                                     <div class="mb-3 mt-3">
                                         <label class="form-label">Top Title</label>

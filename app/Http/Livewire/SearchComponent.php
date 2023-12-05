@@ -19,22 +19,26 @@ class SearchComponent extends Component
     public $q;
     public $search_term;
 
+    // Mengisi query pencarian dan menetapkan nilai awal untuk variabel pencarian
     public function mount()
     {
         $this->fill(request()->only('q'));
         $this->search_term = '%'.$this->q . '%';
     }
 
+    // Mengubah ukuran halaman hasil pencarian
     public function changePageSize($size)
     {
         $this->pageSize = $size;
     }
 
+    // Mengubah urutan hasil pencarian
     public function changeOrderBy($order)
     {
         $this->orderBy = $order;
     }
 
+    // Menambahkan produk ke keranjang belanja
     public function store($product_id, $product_name, $product_price)
     {
         if (Auth::check()) {
@@ -47,6 +51,7 @@ class SearchComponent extends Component
         }
     }
 
+    // Menambahkan produk ke daftar wishlist
     public function addToWishlist($product_id, $product_name, $product_price)
     {
         if (Auth::check()) {
@@ -57,6 +62,7 @@ class SearchComponent extends Component
         }
     }
 
+    // Menghapus produk dari daftar wishlist
     public function removeFromWishlist($product_id)
     {
         foreach(Cart::instance('wishlist')->content() as $witem);
@@ -72,6 +78,7 @@ class SearchComponent extends Component
     
     public function render()
     {
+        // Menampilkan hasil pencarian berdasarkan urutan yang dipilih
         if($this->orderBy == 'Price: Low to High')
         {
             $products = Product::where('name', 'like', $this->search_term)->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
@@ -87,6 +94,7 @@ class SearchComponent extends Component
         else{
             $products = Product::where('name', 'like', $this->search_term)->paginate($this->pageSize);
         }
+
         $categories = Category::orderBy('name', 'ASC')->get();
         return view('livewire.search-component', ['products'=>$products, 'categories'=>$categories]);
     }

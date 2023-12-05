@@ -22,6 +22,7 @@ class CheckoutComponent extends Component
     
     public $paymentmode;
 
+    // Fungsi yang dipanggil saat ada perubahan pada field tertentu
     public function updated($fields)
     {
         $this->validateOnly($fields, [
@@ -37,8 +38,10 @@ class CheckoutComponent extends Component
         ]);
     }
 
+    // Fungsi untuk tombol order
     public function placeOrder()
     {
+        // Memeriksa apakah pengguna sudah login
         if (!Auth::check()) {
             return redirect()->route('login');
         }
@@ -54,7 +57,7 @@ class CheckoutComponent extends Component
             'zipcode' => 'required',
             'paymentmode' => 'required'
         ]);
-
+        // Membuat pesanan baru
         $order = new Order();
         $order->user_id = Auth::user()->id;
         $cleanedSubtotal = intval(str_replace(',', '', session()->get('checkout')['subtotal']));
@@ -71,7 +74,7 @@ class CheckoutComponent extends Component
         $order->zipcode = $this->zipcode;
         $order->status = 'ordered';
         $order->save();
-
+        // Menambahkan item pesanan ke dalam tabel OrderItem
         foreach(Cart::instance('cart')->content() as $item)
         {
             $orderItem = new OrderItem();
@@ -81,7 +84,7 @@ class CheckoutComponent extends Component
             $orderItem->quantity = $item->qty;
             $orderItem->save();
         }
-
+        // Jika metode pembayaran adalah 'cod' (Cash on Delivery)
         if($this->paymentmode == 'cod')
         {
             $transaction = new Transaction();

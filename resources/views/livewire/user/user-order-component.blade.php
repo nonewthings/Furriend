@@ -16,6 +16,7 @@
                 </div>
             </div>
         </div>
+        <!-- Daftar Semua Pesanan -->
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
@@ -46,6 +47,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <!-- Menampilkan data pesanan -->
                                             @foreach($orders as $order)
                                             <tr>
                                                 <td>{{$order->id}}</td>
@@ -57,6 +59,7 @@
                                                 <td>{{$order->zipcode}}</td>
                                                 <td>{{$order->status}}</td>
                                                 <td>{{$order->created_at}}</td>
+                                                <!-- Tombol untuk melihat detail pesanan -->
                                                 <td><a href="{{route('user.orderdetails', ['order_id'=>$order->id])}}" class="btn btn-info btn-sm">Details</a></td>
                                             </tr>
                                             @endforeach

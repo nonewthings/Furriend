@@ -9,5 +9,6 @@ class Contact extends Model
 {
     use HasFactory;
 
+    // Nama tabel yang digunakan untuk model ini
     protected $table = "contacts";
 }

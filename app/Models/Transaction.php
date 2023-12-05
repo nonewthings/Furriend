@@ -11,6 +11,7 @@ class Transaction extends Model
 
     protected $table = "transactions";
 
+    // Relasi dengan model Order: satu transaksi dimiliki oleh satu pesanan
     public function order()
     {
         return $this->belongsTo(Order::class);

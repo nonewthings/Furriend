@@ -20,6 +20,7 @@ class AdminEditHomeSlideComponent extends Component
     public $slide_id;
     public $newimage;
 
+    // Fungsi untuk inisialisasi data slide yang akan diubah
     public function mount($slide_id)
     {
         $slide = HomeSlider::find($slide_id);
@@ -33,6 +34,7 @@ class AdminEditHomeSlideComponent extends Component
         $this->slider_id = $slide->id;
     }
 
+    // Fungsi untuk menyimpan perubahan pada slide
     public function updateSlide()
     {
         $this->validate([
@@ -45,12 +47,14 @@ class AdminEditHomeSlideComponent extends Component
         ]);
 
         $slide = HomeSlider::find($this->slide_id);
+        // Update properti slide dengan nilai yang baru
         $slide->top_title = $this->top_title;
         $slide->title = $this->title;
         $slide->sub_title = $this->sub_title;
         $slide->offer = $this->offer;
         $slide->link = $this->link;
         $slide->status = $this->status;
+        // Jika ada gambar baru, hapus gambar lama dan simpan yang baru
         if($this->newimage)
         {
             unlink('assets/imgs/slider/'.$slide->image);

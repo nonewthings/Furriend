@@ -1,5 +1,6 @@
 <div>
     <main class="main">
+        <!-- Header halaman dengan breadcrumb -->
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -8,6 +9,7 @@
                 </div>
             </div>
         </div>
+        <!-- Menampilkan daftar posting blog -->
         <section class="mt-50 mb-50">
             <div class="container custom">
                 <div class="row">
@@ -15,6 +17,7 @@
                         <div class="single-header mb-50">
                             <h1 class="font-xxl text-brand">Our Blog</h1>
                         </div>
+                        <!-- Daftar posting blog -->
                         <div class="loop-grid pr-30">
                             <div class="row">
                                 <div class="col-12">

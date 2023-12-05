@@ -18,16 +18,19 @@ class ShopComponent extends Component
     public $min_value = 0;
     public $max_value = 1000000;
 
+    // Mengubah ukuran halaman hasil pencarian
     public function changePageSize($size)
     {
         $this->pageSize = $size;
     }
 
+    // Mengubah urutan hasil pencarian
     public function changeOrderBy($order)
     {
         $this->orderBy = $order;
     }
 
+    // Menambahkan produk ke keranjang belanja
     public function store($product_id, $product_name, $product_price)
     {
         if (Auth::check()) {
@@ -40,6 +43,7 @@ class ShopComponent extends Component
         }
     }
 
+    // Menambahkan produk ke daftar wishliist
     public function addToWishlist($product_id, $product_name, $product_price)
     {
         if (Auth::check()) {
@@ -50,6 +54,7 @@ class ShopComponent extends Component
         }
     }
 
+    // Menghapus produk dari daftar wishlist
     public function removeFromWishlist($product_id)
     {
         foreach(Cart::instance('wishlist')->content() as $witem);
@@ -80,6 +85,7 @@ class ShopComponent extends Component
         else{
             $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->paginate($this->pageSize);
         }
+        
         $categories = Category::orderBy('name', 'ASC')->get();
         return view('livewire.shop-component', ['products'=>$products, 'categories'=>$categories]);
     }

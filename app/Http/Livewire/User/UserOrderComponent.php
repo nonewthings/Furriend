@@ -10,6 +10,7 @@ class UserOrderComponent extends Component
 {
     public function render()
     {
+        // Ambil pesanan berdasarkan ID pengguna yang sedang login dengan paginasi
         $orders = Order::where('user_id', Auth::user()->id)->paginate(12);
         return view('livewire.user.user-order-component', ['orders'=>$orders]);
     }

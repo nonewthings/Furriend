@@ -16,11 +16,13 @@ class AdminAddCategoryComponent extends Component
     public $image;
     public $is_popular = 0;
     
+    // Fungsi untuk menghasilkan slug berdasarkan nama
     public function generateSlug()
     {
         $this->slug = Str::slug($this->name);
     }
     
+    // Validasi field saat diupdate
     public function updated($fields)
     {
         $this->validateOnly($fields,[
@@ -30,6 +32,7 @@ class AdminAddCategoryComponent extends Component
         ]);
     }
 
+    // Simpan kategori baru
     public function storeCategory()
     {
         $this->validate([
@@ -37,12 +40,17 @@ class AdminAddCategoryComponent extends Component
             'slug' => 'required',
             'image' => 'required'
         ]);
+        // Buat instance kategori baru
         $category = new Category();
         $category->name = $this->name;
         $category->slug = $this->slug;
+
+        // Simpan gambar yang diunggah dengan nama yang memiliki timestamp
         $imageName = Carbon::now()->timestamp.'.'.$this->image->extension();
         $this->image->storeAs('categories', $imageName);
         $category->image = $imageName;
+
+        // Setel flag is_popular
         $category->is_popular = $this->is_popular;
         $category->save();
         session()->flash('message', 'Category has been created successfully');

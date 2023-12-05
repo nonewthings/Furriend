@@ -20,6 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <!-- Bagian untuk Menampilkan Semua Produk -->
                         <div class="card">
                             <div class="card-header">
                                 <div class="row">
@@ -27,6 +28,7 @@
                                         All Products
                                     </div>
                                     <div class="col-md-6">
+                                        <!-- Tombol untuk Navigasi ke Tambah Produk Baru -->
                                         <a href="{{ route('admin.product.add') }}" class="btn btn-success float-end">Add New Product</a>
                                     </div>
                                 </div>
@@ -35,6 +37,7 @@
                                 @if(Session::has('message'))
                                     <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
                                 @endif
+                                <!-- Tabel untuk Menampilkan Daftar Produk -->
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
@@ -69,6 +72,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <!-- Pagination untuk Halaman Produk -->
                                 {{ $products->links() }}
                             </div>
                         </div>
@@ -78,7 +82,7 @@
         </section>
     </main>
 </div>
-
+<!-- Modal Konfirmasi Penghapusan -->
 <div class="modal" id="deleteConfirmation">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -94,7 +98,7 @@
         </div>
     </div>
 </div>
-
+<!-- Script JavaScript untuk Penghapusan -->
 @push('scripts')
     <script>
         function deleteConfirmation(id) {

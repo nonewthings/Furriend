@@ -9,8 +9,10 @@ class AdminHomeSliderComponent extends Component
 {
     public $slide_id;
     
+    // Fungsi untuk menghapus slide
     public function deleteSlide()
     {
+        // Temukan slide berdasarkan ID
         $slide = HomeSlider::find($this->slide_id);
         unlink('assets/imgs/slider/'.$slide->image);
         $slide->delete();
@@ -19,6 +21,7 @@ class AdminHomeSliderComponent extends Component
 
     public function render()
     {
+        // Ambil semua slide, diurutkan berdasarkan tanggal pembuatan secara descending
         $slides = HomeSlider::orderBy('created_at', 'DESC')->get();
         return view('livewire.admin.admin-home-slider-component', ['slides'=>$slides]);
     }

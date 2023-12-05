@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class WishlistComponent extends Component
 {
+    // Menambahkan item dari daftar wishlist ke keranjang belanja
     public function store($product_id, $product_name, $product_price)
     {
         Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
@@ -17,6 +18,7 @@ class WishlistComponent extends Component
         $this->emit('refreshComponent');
     }
 
+    // Menghapus produk dari daftar wishlist
     public function removeFromWishlist($product_id)
     {
         foreach(Cart::instance('wishlist')->content() as $witem)
@@ -32,6 +34,7 @@ class WishlistComponent extends Component
 
     public function render()
     {
+        // Mengambil item dari daftar keinginan dan menambahkan path gambar ke setiap item
         $wishlistItems = Cart::instance('wishlist')->content();
         $wishlistItemsWithImage = $wishlistItems->map(function ($item) {
             $product = Product::find($item->id);

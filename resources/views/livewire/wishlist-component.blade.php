@@ -30,6 +30,7 @@
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row product-grid-4">
+                    <!-- Item produk -->
                     @foreach($wishlistItems as $item)
                         <div class="col-lg-3 col-md-3 col-6 col-sm-6">
                             <div class="product-cart-wrap mb-30">

@@ -1,5 +1,6 @@
 <div>
     <main class="main">
+        <!-- Header halaman dengan breadcrumb -->
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -12,6 +13,7 @@
         <section class="pt-50 pb-50">
             <div class="container">
                 <div class="row">
+                    <!-- Kolom untuk menempatkan form kontak -->
                     <div class="col-xl-8 col-lg-10 m-auto">
                         <div class="contact-from-area padding-20-row-col wow FadeInUp">
                             <h3 class="mb-10 text-center">Drop Us a Line</h3>
@@ -19,6 +21,7 @@
                             @if(Session::has('message'))
                                 <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                             @endif
+                            <!-- Form untuk mengirim pesan -->
                             <form class="contact-form-style text-center" id="contact-form" wire:submit.prevent="sendMessage">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
@@ -39,6 +42,7 @@
                                             @error('phone') <p class="text-danger">{{$message}}</p> @enderror
                                         </div>
                                     </div>
+                                    <!-- Tombol untuk mengirim pesan -->
                                     <div class="col-lg-12 col-md-12">
                                         <div class="textarea-style mb-30">
                                             <textarea name="message" placeholder="Message" wire:model="message"></textarea>

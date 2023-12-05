@@ -1,5 +1,6 @@
 <div>
     <main class="main single-page">
+        <!-- Header halaman dengan breadcrumb -->
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -8,6 +9,7 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian untuk menjelaskan tentang usaha atau layanan -->
         <section class="section-padding">
             <div class="container pt-25">
                 <div class="row">
@@ -22,7 +24,8 @@
                     </div>
                 </div>
             </div>
-        </section>                
+        </section>
+        <!-- Bagian untuk menampilkan testimoni pelanggan -->
         <section id="testimonials" class="section-padding">
             <div class="container pt-25">
                 <div class="row mb-50">
@@ -114,6 +117,7 @@
                 </div>
             </div>
         </section>
+        <!-- Bagian untuk menampilkan merek-merek unggulan -->
         <section class="section-padding">
             <div class="container pb-25">
                 <h3 class="section-title mb-20 wow fadeIn animated text-center"><span>Featured</span> Brands</h3>

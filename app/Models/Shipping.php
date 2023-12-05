@@ -9,8 +9,10 @@ class Shipping extends Model
 {
     use HasFactory;
 
+    // Tabel yang digunakan untuk model Shipping
     protected $table = "shippings";
 
+    // Relasi dengan model Order: satu pengiriman dimiliki oleh satu pesanan
     public function order()
     {
         return $this->belongsTo(Order::class);

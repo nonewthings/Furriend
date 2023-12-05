@@ -1,5 +1,6 @@
 <div>
     <main class="main">
+        <!-- Header halaman dengan breadcrumb -->
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -9,6 +10,7 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian utama konten produk -->
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
@@ -29,6 +31,7 @@
                                             <div><img src="{{ asset('assets/imgs/products')}}/{{ $product->image }}"></div>
                                         </div>
                                     </div>
+                                    <!-- Ikon media sosial dan bagikan -->
                                     <div class="social-icons single-share">
                                         <ul class="text-grey-5 d-inline-block">
                                             <li><strong class="mr-10">Share this:</strong></li>
@@ -39,8 +42,10 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- Kolom informasi produk -->
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="detail-info">
+                                        <!-- Judul produk -->
                                         <h2 class="title-detail">{{ $product->name }}</h2>
                                         <div class="product-detail-rating"></div>
                                         <div class="clearfix product-price-cover">
@@ -55,6 +60,7 @@
                                         <div class="attr-detail attr-color mb-15"></div>
                                         <div class="attr-detail attr-size"></div>
                                         <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+                                        <!-- Tombol untuk kuantitas dan tombol tambah ke keranjang -->
                                         <div class="detail-extralink">
                                             <div class="detail-qty border radius">
                                                 <a href="#" class="qty-down" wire:click.prevent="decreaseQuantity"><i class="fi-rs-angle-small-down"></i></a>
@@ -65,6 +71,7 @@
                                                 <button type="button" class="button button-add-to-cart" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to cart</button>
                                             </div>
                                         </div>
+                                        <!-- Metadata produk seperti SKU, Tag, dan Ketersediaan -->
                                         <ul class="product-meta font-xs color-grey mt-50">
                                             <li class="mb-5">SKU: <a>{{ $product->SKU }}</a></li>
                                             @if(isset($category))
@@ -76,6 +83,7 @@
                                     <!-- Detail Info -->
                                 </div>
                             </div>
+                            <!-- Deskripsi produk -->
                             <div class="tab-style3">
                                 <ul class="nav nav-tabs text-uppercase">
                                     <li class="nav-item">
@@ -90,6 +98,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Produk terkait -->
                             <div class="row mt-60">
                                 <div class="col-12">
                                     <h3 class="section-title style-1 mb-30">Related products</h3>
@@ -126,6 +135,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Kolom sidebar dengan daftar kategori -->
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
                         <div class="widget-category mb-30">
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>

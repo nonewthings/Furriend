@@ -11,13 +11,16 @@ class UserOrderDetailsComponent extends Component
 {
     public $order_id;
 
+    // Fungsi untuk menginisialisasi komponen dengan ID pesanan
     public function mount($order_id)
     {
         $this->order_id = $order_id;
     }
 
+    // Fungsi untuk membatalkan pesanan
     public function cancelOrder()
     {
+        // Temukan pesanan berdasarkan ID dan ubah statusnya menjadi "canceled"
         $order = Order::find($this->order_id);
         $order->status = "canceled";
         $order->canceled_date = DB::raw('CURRENT_DATE');
@@ -27,6 +30,7 @@ class UserOrderDetailsComponent extends Component
 
     public function render()
     {
+        // Ambil detail pesanan berdasarkan ID pengguna dan ID pesanan
         $order = Order::where('user_id', Auth::user()->id)->where('id', $this->order_id)->first();
         return view('livewire.user.user-order-details-component', ['order'=>$order]);
     }

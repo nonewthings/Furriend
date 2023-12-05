@@ -1,5 +1,6 @@
 <x-app-layout>
-<main class="main">
+    <main class="main">
+        <!-- Header halaman dengan breadcrumb -->
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -8,17 +9,20 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian utama halaman login -->
         <section class="pt-150 pb-150">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 m-auto">
                         <div class="row">
+                            <!-- Kolom formulir login -->
                             <div class="col-lg-5">
                                 <div class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
                                             <h3 class="mb-30">Login</h3>
                                         </div>
+                                        <!-- Formulir login -->
                                         <form method="post" action="{{ route('login') }}">
                                             @csrf
                                             <div class="form-group">

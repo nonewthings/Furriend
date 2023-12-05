@@ -19,6 +19,7 @@
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
+                    <!-- Bagian untuk Edit Kategori -->
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
@@ -27,14 +28,17 @@
                                         Edit Category
                                     </div>
                                     <div class="col-md-6">
+                                        <!-- Tombol untuk Navigasi ke Semua Kategori -->
                                         <a href="{{ route('admin.categories') }}" class="btn btn-success float-end">All Categories</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
+                                <!-- Pemberitahuan Pesan Sukses -->
                                 @if(Session::has('message'))
                                     <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
                                 @endif
+                                <!-- Formulir untuk Mengedit Kategori -->
                                 <form wire:submit.prevent="updateCategory">
                                     <div class="mb-3 mt-3">
                                         <label for="name" class="form-label">Name</label>

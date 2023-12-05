@@ -11,6 +11,7 @@ class AdminCategoriesComponent extends Component
     use WithPagination;
     public $category_id;
 
+    // Fungsi untuk menghapus kategori
     public function deleteCategory()
     {
         $category = Category::find($this->category_id);
@@ -19,6 +20,7 @@ class AdminCategoriesComponent extends Component
         session()->flash('message', 'Category has been deleted successfully.');
     }
 
+    // Render tampilan komponen dengan menyertakan data kategori yang dipaginasi
     public function render()
     {
         $categories = Category::orderBy('name', 'ASC')->paginate(5);

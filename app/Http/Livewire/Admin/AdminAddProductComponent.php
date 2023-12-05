@@ -25,11 +25,13 @@ class AdminAddProductComponent extends Component
     public $image;
     public $category_id;
 
+    // Fungsi untuk menghasilkan slug dari nama produk
     public function generateSlug()
     {
         $this->slug = Str::slug($this->name);
     }
 
+    // Fungsi untuk menambahkan produk baru
     public function addProduct()
     {
         $this->validate([
@@ -46,6 +48,7 @@ class AdminAddProductComponent extends Component
             'image' => 'required',
             'category_id' => 'required'
         ]);
+        // Buat instance baru dari model Product
         $product = new Product();
         $product->name = $this->name;
         $product->slug = $this->slug;
@@ -57,6 +60,8 @@ class AdminAddProductComponent extends Component
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;
+
+        // Simpan gambar yang diunggah dengan nama yang memiliki timestamp
         $imageName = Carbon::now()->timestamp.'.'.$this->image->extension();
         $this->image->storeAs('products', $imageName);
         $product->image = $imageName;
@@ -65,6 +70,7 @@ class AdminAddProductComponent extends Component
         session()->flash('message', 'Product has been added.');
     }
 
+    // Render tampilan komponen dengan menyertakan data kategori
     public function render()
     {
         $categories = Category::orderBy('name', 'ASC')->get();

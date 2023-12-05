@@ -9,6 +9,7 @@ class BlogPost extends Model
 {
     use HasFactory;
 
+    // Daftar kolom yang dapat diisi
     protected $fillable = [
         'slug',
         'title',

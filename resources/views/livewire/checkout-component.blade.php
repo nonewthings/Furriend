@@ -1,4 +1,5 @@
 <div>
+    <!-- Halaman checkout dengan formulir untuk pengisian detail pembayaran -->
     <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -11,12 +12,14 @@
         </div>
         <section class="mt-50 mb-50">
             <div class="container">
+                <!-- Formulir untuk melakukan pemesanan -->
                 <form wire:submit.prevent="placeOrder">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-25">
                             <h4>Billing Details</h4>
                         </div>
+                        <!-- Formulir untuk mengisi detail pemesanan -->
                         <form method="post">
                             <div class="form-group">
                                 <input type="text" required="" name="fname" placeholder="First name *" wire:model="firstname">
@@ -66,6 +69,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!-- Menampilkan daftar produk yang ada di keranjang -->
                                         @foreach(Cart::instance('cart')->content() as $item)
                                         <tr>
                                             <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/products')}}/{{ $item->model->image }}" alt="#"></td>
@@ -75,6 +79,7 @@
                                             <td>Rp{{ number_format($item->subtotal, 0) }}</td>
                                         </tr>
                                         @endforeach
+                                        <!-- Menampilkan total harga pesanan -->
                                         @if(Session::has('checkout'))
                                         <tr>
                                             <th>Total</th>
@@ -85,6 +90,7 @@
                                 </table>
                             </div>
                             <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+                            <!-- Pilihan metode pembayaran -->
                             <div class="payment_method">
                                 <div class="mb-25">
                                     <h4>Payment</h4>

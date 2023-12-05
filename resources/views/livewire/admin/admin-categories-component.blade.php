@@ -19,6 +19,7 @@
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
+                    <!-- Bagian untuk Tambah Kategori Baru -->
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
@@ -27,14 +28,17 @@
                                         All Categories
                                     </div>
                                     <div class="col-md-6">
+                                        <!-- Tombol untuk Navigasi ke Semua Kategori -->
                                         <a href="{{ route('admin.category.add') }}" class="btn btn-success float-end">Add New Category</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
+                                <!-- Pemberitahuan Pesan Sukses -->
                                 @if(Session::has('message'))
                                     <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
                                 @endif
+                                <!-- Formulir untuk Menyimpan Produk Baru -->
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>

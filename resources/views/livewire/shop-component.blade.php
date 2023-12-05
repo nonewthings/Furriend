@@ -15,6 +15,7 @@
         }
     </style>
     <main class="main">
+        <!-- Header halaman dengan breadcrumb -->
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -23,15 +24,18 @@
                 </div>
             </div>
         </div>
+        <!-- Bagian konten utama halaman shop -->
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
+                        <!-- Filter dan pengurutan produk -->
                         <div class="shop-product-fillter">
                             <div class="totall-product">
                                 <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you!</p>
                             </div>
                             <div class="sort-by-product-area">
+                                <!-- Filter jumlah item yang ditampilkan -->
                                 <div class="sort-by-cover mr-10">
                                     <div class="sort-by-product-wrap">
                                         <div class="sort-by">
@@ -70,11 +74,13 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Tampilan grid produk -->
                         <div class="row product-grid-3">
                             @php
                                 $witems = Cart::instance('wishlist')->content()->pluck('id');
                             @endphp
                             @foreach($products as $product)
+                            <!-- Item produk -->
                             <div class="col-lg-4 col-md-4 col-6 col-sm-6">
                                 <div class="product-cart-wrap mb-30">
                                     <div class="product-img-action-wrap">
@@ -112,16 +118,18 @@
                             </div>
                             @endforeach
                         </div>
-                        <!--Pagination-->
+                        <!--Pagination produk-->
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
                             {{ $products->links() }}
                         </div>
                     </div>
+                    <!-- Kolom sidebar -->
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
                         <div class="row">
                             <div class="col-lg-12 col-mg-6"></div>
                             <div class="col-lg-12 col-mg-6"></div>
                         </div>
+                        <!-- Widget kategori -->
                         <div class="widget-category mb-30">
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                             <ul class="categories">
@@ -130,7 +138,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <!-- Filter by Price -->
+                        <!-- Filter berdasarkan harga -->
                         <div class="sidebar-widget price_range range mb-30">
                             <div class="widget-header position-relative mb-20 pb-10">
                                 <h5 class="widget-title mb-10">Filter by price</h5>
@@ -155,6 +163,7 @@
         </section>
     </main>
 </div>
+<!-- Script JavaScript untuk slider range harga -->
 @push('scripts')
     <script>
         var sliderrange = $('#slider-range');

@@ -14,6 +14,7 @@ class ContactComponent extends Component
     public $phone;
     public $message;
 
+    // Fungsi yang dipanggil saat ada perubahan pada field tertentu
     public function updated($fields)
     {
         $this->validateOnly($fields, [
@@ -24,6 +25,7 @@ class ContactComponent extends Component
         ]);
     }
 
+    // Fungsi untuk mengirim pesan
     public function sendMessage()
     {
         if (!Auth::check()) {
@@ -37,6 +39,7 @@ class ContactComponent extends Component
             'message' => 'required'
         ]);
 
+        // Membuat objek Contact dan menyimpan pesan
         $contact = new Contact();
         $contact->name = $this->name;
         $contact->email = $this->email;

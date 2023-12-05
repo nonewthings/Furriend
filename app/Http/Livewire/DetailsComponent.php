@@ -13,16 +13,19 @@ class DetailsComponent extends Component
     public $slug;
     public $quantity = 1;
 
+    // Fungsi yang dipanggil saat komponen di-mount dengan menerima slug produk
     public function mount($slug)
     {
         $this->slug = $slug;
     }
 
+    // Fungsi untuk menambah jumlah produk
     public function increaseQuantity()
     {
         $this->quantity++;
     }
 
+    // Fungsi untuk mengurangi jumlah produk, tidak kurang dari 1
     public function decreaseQuantity()
     {
         if ($this->quantity > 1) {
@@ -30,6 +33,7 @@ class DetailsComponent extends Component
         }
     }
 
+    // Fungsi untuk menyimpan produk ke keranjang belanja
     public function store($product_id, $product_name, $product_price)
     {
         if (Auth::check()) {
@@ -42,6 +46,7 @@ class DetailsComponent extends Component
         }
     }
 
+    // Menampilkan tampilan komponen detail produk
     public function render()
     {
         $product = Product::where('slug', $this->slug)->first();

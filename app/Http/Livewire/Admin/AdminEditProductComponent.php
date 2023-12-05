@@ -27,6 +27,7 @@ class AdminEditProductComponent extends Component
     public $category_id;
     public $newimage;
 
+    // Fungsi untuk inisialisasi data produk yang akan diubah
     public function mount($product_id)
     {
         $product = Product::find($product_id);
@@ -45,11 +46,13 @@ class AdminEditProductComponent extends Component
         $this->category_id = $product->category_id;
     }
 
+    // Fungsi untuk menghasilkan slug berdasarkan nama produk
     public function generateSlug()
     {
         $this->slug = Str::slug($this->name);
     }
 
+    // Fungsi untuk menyimpan perubahan pada produk
     public function updateProduct()
     {
         $this->validate([
@@ -67,6 +70,7 @@ class AdminEditProductComponent extends Component
             'category_id' => 'required'
         ]);
         $product = Product::find($this->product_id);
+        // Update properti produk dengan nilai yang baru
         $product->name = $this->name;
         $product->slug = $this->slug;
         $product->short_description = $this->short_description;
@@ -77,6 +81,7 @@ class AdminEditProductComponent extends Component
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;
+        // Jika ada gambar baru, hapus gambar lama dan simpan yang baru
         if($this->newimage)
         {
             unlink('assets/imgs/products/'.$product->image);
