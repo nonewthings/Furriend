@@ -51,11 +51,11 @@
                                     <h2><a href="{{ route('product.details', ['slug'=>$item->model->slug]) }}">{{ $item->model->name }}</a></h2>
                                     <div class="rating-result" title="90%">
                                         <span>
-                                            <span>30%</span>
+                                            <span>10%</span>
                                         </span>
                                     </div>
                                     <div class="product-price">
-                                        <span>Rp{{ $item->model->regular_price }} </span>
+                                        <span>Rp{{ number_format($item->model->regular_price, 0) }} </span>
                                     </div>
                                     <div class="product-action-1 show">
                                         <a aria-label="Remove From Wishlist" class="action-btn hover-up wishlisted" href="#" wire:click.prevent="removeFromWishlist({{ $item->model->id }})"><i class="fi-rs-heart"></i></a>
